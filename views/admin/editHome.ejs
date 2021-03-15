@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Webpixels" />
+    <title>Millennium | Edit Home Page</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="wp-content/uploads/2020/07/cropped-Favikon-32x32.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <!-- Font Awesome 5 -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <!-- Page CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/libs/fullcalendar/dist/fullcalendar.min.css"
+    />
+    <!-- Purpose CSS -->
+    <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet" />
+  </head>
+
+  <body class="application application-offset">
+    <!-- Chat modal -->
+    <!-- Customizer modal -->
+
+    <!-- Application container -->
+    <div class="container-fluid container-application">
+      <!-- Sidenav -->
+      <div class="sidenav" id="sidenav-main">
+        <!-- Sidenav header -->
+        <div class="sidenav-header d-flex align-items-center">
+          <a class="navbar-brand" href="/adminDashboard">
+            <img
+              src="../assets/img/brand/white.png"
+              class="navbar-brand-img"
+              alt="..."
+            />
+          </a>
+          <div class="ml-auto">
+            <!-- Sidenav toggler -->
+            <div
+              class="sidenav-toggler sidenav-toggler-dark d-md-none"
+              data-action="sidenav-unpin"
+              data-target="#sidenav-main"
+            >
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- User mini profile -->
+        <div
+          class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center"
+        >
+          <!-- Avatar -->
+          <div>
+            <a href="#" class="avatar rounded-circle avatar-xl">
+              <img
+                alt="Image placeholder"
+                src="../assets/img/theme/light/team-1-800x800.jpg"
+                class=""
+              />
+            </a>
+            <div class="mt-4">
+              <h5 class="mb-0 text-white">Millennium Developers</h5>
+            </div>
+          </div>
+          <!-- User info -->
+        </div>
+        <!-- Application nav -->
+        <div class="nav-application clearfix">
+          <a href="/adminDashboard" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/speedometer.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Home</span>
+          </a>
+          <a href="/editHome" class="btn btn-square text-sm active">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/home.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Edit Home Page</span>
+          </a>
+          <a href="/editProject" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Projects</span>
+          </a>
+          <a href="/previousProjects" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Completed Projects</span>
+          </a>
+          <a href="/userTable" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/man.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Users</span>
+          </a>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="main-content position-relative">
+        <!-- Main nav -->
+        <nav
+          class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border"
+          id="navbar-main"
+        >
+          <div class="container-fluid">
+            <!-- Brand + Toggler (for mobile devices) -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-main-collapse"
+              aria-controls="navbar-main-collapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- User's navbar -->
+            <div class="navbar-user d-lg-none ml-auto">
+              <ul class="navbar-nav flex-row align-items-center">
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <span class="avatar avatar-sm rounded-circle">
+                      <img
+                        alt="Image placeholder"
+                        src="../assets/img/theme/light/team-4-800x800.jpg"
+                      />
+                    </span>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow"
+                  >
+                    <a href="user/profile.html" class="dropdown-item">
+                      <i class="fas fa-user"></i>
+                      <span>My profile</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="authentication/login.html" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="collapse navbar-collapse navbar-collapse-fade"
+              id="navbar-main-collapse"
+            >
+              <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item d-lg-none">
+                  <a class="nav-link" href="/adminDashboard"> Overview </a>
+                </li>
+                <li class="border-top opacity-2 my-2"></li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/adminDashboard"> Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/editProjects">
+                    Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/previousProjects">
+                    Completed Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/userTable"> Users </a>
+                </li>
+              </ul>
+              <ul
+                class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex"
+              >
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="media media-pill align-items-center">
+                      <span class="avatar rounded-circle">
+                        <img
+                          alt="Image placeholder"
+                          src="../assets/img/theme/light/team-1-800x800.jpg"
+                        />
+                      </span>
+                      <div class="ml-2 d-none d-lg-block">
+                        <span class="mb-0 text-sm font-weight-bold"
+                          >Millennium Developers</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow"
+                  >
+                    <h6 class="dropdown-header px-0">Hi, John!</h6>
+                    <a href="#!" class="dropdown-item">
+                      <i class="fas fa-user"></i>
+                      <span>My profile</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#!" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="card"
+          data-toggle="dragula"
+          data-containers='["card-list-1", "card-list-2", "card-list-3"]'
+        >
+          <% if(errorMsg !=null && errorMsg.length>0) {%>
+          <div id="flash-msg" class="alert alert-danger"><%=errorMsg %></div>
+          <%}%>
+          <div
+            style="
+              text-align: center;
+              color: #c28562 !important ;
+              margin-top: 35px;
+            "
+          >
+            <p style="color: #363435; font-size: 20px">
+              Edit the home page images and text from below
+            </p>
+          </div>
+          <!-- Omnisearch -->
+          <div style="margin: 0 auto; width: 90%">
+            <form
+              action="/editHome"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <label for="banner1" class="inputLabel">Image for Banner 1</label>
+              <div class="cz-file-drop-area form-group" id="banner1">
+                <input
+                  type="file"
+                  name="banner1"
+                  id="file-1"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  value="<%= homepage.banner1 %>"
+                  multiple
+                  required
+                />
+                <label for="file-1">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+              </div>
+              <label for="banner2" class="inputLabel">Image for Banner 2</label>
+              <div class="cz-file-drop-area form-group" id="banner2">
+                <input
+                  type="file"
+                  name="banner2"
+                  id="file-2"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  value="<%= homepage.banner2 %>"
+                  multiple
+                  required
+                />
+                <label for="file-2">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section1Text"
+                  >Section 1 Text Header :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section1Text"
+                  name="sec1textheader"
+                  value="<%= homepage.sec1textheader %>"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section2Text"
+                  >Section 1 Text paragraph :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section2Text"
+                  name="sec1texpara"
+                  value="<%= homepage.sec1texpara %>"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="section1" class="inputLabel"
+                    >Image for section 1</label
+                  >
+                  <div class="cz-file-drop-area form-group" id="section1">
+                    <input
+                      type="file"
+                      name="section1image1"
+                      id="file-3"
+                      class="custom-input-file"
+                      data-multiple-caption="{count} files selected"
+                      value="<%= homepage.section1image1 %>"
+                      required
+                    />
+                    <label for="file-3">
+                      <i class="fa fa-upload"></i>
+                      <span>Choose a file…</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="section2" class="inputLabel"
+                    >Image for section 2</label
+                  >
+                  <div class="cz-file-drop-area form-group" id="section2">
+                    <input
+                      type="file"
+                      name="section1image2"
+                      id="file-4"
+                      class="custom-input-file"
+                      data-multiple-caption="{count} files selected"
+                      value="<%= homepage.section1image2 %>"
+                      required
+                    />
+                    <label for="file-4">
+                      <i class="fa fa-upload"></i>
+                      <span>Choose a file…</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section2Text1"
+                  >Section 2 Text Header :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section2Text1"
+                  name="section2text1"
+                  value="<%= homepage.section2text1 %>"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section2Text1"
+                  >Section 2 Video Link :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section2VideoLink"
+                  name="section2VideoLink"
+                  value="<%= homepage.section2VideoLink %>"
+                />
+              </div>
+              <label for="thumbnail" class="inputLabel"
+                >Thumbnail Image for Video</label
+              >
+              <div class="cz-file-drop-area form-group" id="thumbnail">
+                <input
+                  type="file"
+                  name="thumbnail"
+                  id="file-5"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  value="<%= homepage.thumbnail %>"
+                />
+                <label for="file-5">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section2Text2"
+                  >Section 2 Text paragraph :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section2Text2"
+                  name="section2Text2"
+                  value="<%= homepage.section2Text2 %>"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">
+                <i class="czi-cloud-upload font-size-lg mr-2"></i>Update Home
+                Page
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/purpose.core.js"></script>
+    <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/moment/min/moment.min.js"></script>
+    <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script src="../assets/js/purpose.js"></script>
+    <script src="../assets/js/demo.js"></script>
+    <!-- <script src="js/theme.min.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Webpixels" />
+    <title>Millennium | Add Project</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="wp-content/uploads/2020/07/cropped-Favikon-32x32.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <!-- Font Awesome 5 -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <!-- Page CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/libs/fullcalendar/dist/fullcalendar.min.css"
+    />
+    <!-- Purpose CSS -->
+    <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet" />
+  </head>
+
+  <body class="application application-offset">
+    <!-- Chat modal -->
+    <!-- Customizer modal -->
+
+    <!-- Application container -->
+    <div class="container-fluid container-application">
+      <!-- Sidenav -->
+      <div class="sidenav" id="sidenav-main">
+        <!-- Sidenav header -->
+        <div class="sidenav-header d-flex align-items-center">
+          <a class="navbar-brand" href="/adminDashboard">
+            <img
+              src="../assets/img/brand/white.png"
+              class="navbar-brand-img"
+              alt="..."
+            />
+          </a>
+          <div class="ml-auto">
+            <!-- Sidenav toggler -->
+            <div
+              class="sidenav-toggler sidenav-toggler-dark d-md-none"
+              data-action="sidenav-unpin"
+              data-target="#sidenav-main"
+            >
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- User mini profile -->
+        <div
+          class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center"
+        >
+          <!-- Avatar -->
+          <div>
+            <a href="#" class="avatar rounded-circle avatar-xl">
+              <img
+                alt="Image placeholder"
+                src="../assets/img/theme/light/team-1-800x800.jpg"
+                class=""
+              />
+            </a>
+            <div class="mt-4">
+              <h5 class="mb-0 text-white">Millennium Developers</h5>
+            </div>
+          </div>
+          <!-- User info -->
+        </div>
+        <!-- Application nav -->
+        <div class="nav-application clearfix">
+          <a href="/adminDashboard" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/speedometer.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Dashboard</span>
+          </a>
+          <a href="/editHome" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/home.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Edit Home Page</span>
+          </a>
+          <a href="/editProject" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Projects</span>
+          </a>
+          <a href="/previousProjects" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Completed Projects</span>
+          </a>
+          <a href="/userTable" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/man.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Users</span>
+          </a>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="main-content position-relative">
+        <!-- Main nav -->
+        <nav
+          class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border"
+          id="navbar-main"
+        >
+          <div class="container-fluid">
+            <!-- Brand + Toggler (for mobile devices) -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-main-collapse"
+              aria-controls="navbar-main-collapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- User's navbar -->
+            <div class="navbar-user d-lg-none ml-auto">
+              <ul class="navbar-nav flex-row align-items-center">
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <span class="avatar avatar-sm rounded-circle">
+                      <img
+                        alt="Image placeholder"
+                        src="../assets/img/theme/light/team-4-800x800.jpg"
+                      />
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="collapse navbar-collapse navbar-collapse-fade"
+              id="navbar-main-collapse"
+            >
+              <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item d-lg-none">
+                  <a class="nav-link" href="/adminDashboard"> Overview </a>
+                </li>
+                <li class="border-top opacity-2 my-2"></li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/adminDashboard"> Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/editProjects">
+                    Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/previousProjects">
+                    Completed Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/userTable"> Users </a>
+                </li>
+              </ul>
+              <ul
+                class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex"
+              >
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="media media-pill align-items-center">
+                      <span class="avatar rounded-circle">
+                        <img
+                          alt="Image placeholder"
+                          src="../assets/img/theme/light/team-1-800x800.jpg"
+                        />
+                      </span>
+                      <div class="ml-2 d-none d-lg-block">
+                        <span class="mb-0 text-sm font-weight-bold"
+                          >Millennium Developers</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="card"
+          data-toggle="dragula"
+          data-containers='["card-list-1", "card-list-2", "card-list-3"]'
+        >
+          <% if(errorMsg !=null && errorMsg.length>0) {%>
+          <div id="flash-msg" class="alert alert-danger"><%=errorMsg %></div>
+          <%}%>
+          <div
+            style="
+              text-align: center;
+              color: #6e00ff !important ;
+              margin-top: 35px;
+            "
+          >
+            <p style="color: #363435; font-size: 20px">
+              Add images and text for new
+              <span style="font-weight: bold; color: #6e00ff">Project</span>
+              from below
+            </p>
+          </div>
+          <!-- Omnisearch -->
+          <div style="margin: 0 auto; width: 90%">
+            <form
+              action="/addProject"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div class="mb-3">
+                <input
+                  type="file"
+                  name="banner1"
+                  id="file-1"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  multiple
+                />
+                <label for="file-1">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="bannerText">Banner Text :</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="bannerText"
+                  name="bannerText"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="file-2">PDF :</label>
+                <input
+                  type="file"
+                  name="pdf"
+                  id="file-2"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  multiple
+                />
+                <label for="file-2">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="section1Header"
+                  >Section 1 Text header :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="section1Header"
+                  name="section1Header"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="section1para"
+                  >Section 1 Text paragraph :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="section1para"
+                  name="section1para"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <input
+                      type="file"
+                      name="section1img1"
+                      id="file-3"
+                      class="custom-input-file"
+                      data-multiple-caption="{count} files selected"
+                      multiple
+                    />
+                    <label for="file-3">
+                      <i class="fa fa-upload"></i>
+                      <span>Choose a file…</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <input
+                      type="file"
+                      name="section1img2"
+                      id="file-4"
+                      class="custom-input-file"
+                      data-multiple-caption="{count} files selected"
+                      multiple
+                    />
+                    <label for="file-4">
+                      <i class="fa fa-upload"></i>
+                      <span>Choose a file…</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="projName">Project Name :</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="projName"
+                  name="projName"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <label for="apartTypeCheck" class="inputLabel"
+                >Select apartment type you want to add</label
+              >
+              <div class="custom-control custom-checkbox" id="apartTypeCheck">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="3bhk"
+                  name="3bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="3bhk">3BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="2bhk"
+                  name="2bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="2bhk">2BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="1bhk"
+                  name="1bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="1bhk">1BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="commercial"
+                  name="commercial"
+                  value="1"
+                />
+                <label class="custom-control-label" for="commercial"
+                  >Commercial</label
+                >
+              </div>
+              <div
+                id="formfor3bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">3BHK</h3>
+
+                <label for="3bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 3BHK</label
+                >
+                <div class="row" id="3bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="threebhkimgs"
+                        id="file-5"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-5">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for 3BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="threebhkfpimg1"
+                        id="file-6"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-6">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div
+                id="formfor2bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">2BHK</h3>
+
+                <label for="2bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 2BHK</label
+                >
+                <div class="row" id="2bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="twobhkimgs"
+                        id="file-7"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-7">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for 2BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="twobhkfpimg1"
+                        id="file-8"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-8">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div
+                id="formfor1bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">1BHK</h3>
+
+                <label for="1bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 1BHK</label
+                >
+                <div class="row" id="1bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="onebhkimgs"
+                        id="file-9"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-9">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for 1BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="onebhkfpimg1"
+                        id="file-10"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-10">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div
+                id="formforcommericial"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">Commercial</h3>
+
+                <label
+                  for="commercialimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add images for Commercial</label
+                >
+                <div class="row" id="Commercialimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="commercialimgs"
+                        id="file-11"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-11">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for Commercial</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="commercialfpimg1"
+                        id="file-12"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-12">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >1000 x 800px ideal size for hi-res displays</small
+                      >
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="form-group pb-2">
+                <label class="inputLabel" for="Section2Text2"
+                  >Section 2 header Text :</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="Section2Text2"
+                  name="section2Text2"
+                /><small class="form-text text-muted"
+                  >Maximum 100 characters. No HTML or emoji allowed.</small
+                >
+              </div>
+              <label class="inputLabel" for="unp-product-tags"
+                >Enter info abut nearby spots :</label
+              >
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group py-2">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="spot1"
+                      value="Restaurant"
+                      id="spot1"
+                    />
+                  </div>
+                  <div class="form-group py-2">
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      name="spot1info"
+                      id="unp-product-tags"
+                    ></textarea
+                    ><small class="form-text text-muted"
+                      >Up to 10 keywords that describe your item. Tags should
+                      all be in lowercase and separated by commas.</small
+                    >
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group py-2">
+                    <div class="form-group py-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="spot2"
+                        value="Schools"
+                        id="spot2"
+                      />
+                    </div>
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      name="spot2info"
+                      id="unp-product-tags"
+                    ></textarea
+                    ><small class="form-text text-muted"
+                      >Up to 10 keywords that describe your item. Tags should
+                      all be in lowercase and separated by commas.</small
+                    >
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group py-2">
+                    <div class="form-group py-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="spot3"
+                        value="Shopping Malls"
+                        id="spot3"
+                      />
+                    </div>
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      name="spot3info"
+                      id="unp-product-tags"
+                    ></textarea
+                    ><small class="form-text text-muted"
+                      >Up to 10 keywords that describe your item. Tags should
+                      all be in lowercase and separated by commas.</small
+                    >
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group py-2">
+                    <div class="form-group py-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="spot4"
+                        value="Hospital"
+                        id="spot4"
+                      />
+                    </div>
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      name="spot4info"
+                      id="unp-product-tags"
+                    ></textarea
+                    ><small class="form-text text-muted"
+                      >Up to 10 keywords that describe your item. Tags should
+                      all be in lowercase and separated by commas.</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="section2img" class="inputLabel"
+                  >Image for end section :</label
+                >
+                <input
+                  type="file"
+                  name="section2img"
+                  id="file-13"
+                  class="custom-input-file"
+                  data-multiple-caption="{count} files selected"
+                  multiple
+                />
+                <label for="file-13">
+                  <i class="fa fa-upload"></i>
+                  <span>Choose a file…</span>
+                </label>
+                <small class="form-text text-muted"
+                  >1000 x 800px ideal size for hi-res displays</small
+                >
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">
+                <i class="czi-cloud-upload font-size-lg mr-2"></i>Update Home
+                Page
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/purpose.core.js"></script>
+    <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/moment/min/moment.min.js"></script>
+    <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script src="../assets/js/purpose.js"></script>
+    <script src="../assets/js/demo.js"></script>
+    <script src="js/theme.min.js"></script>
+    .
+    <!-- <script src="js/multipleImages.js"></script> -->
+    <script>
+      $("#formfor3bhk").hide();
+      $("#formfor2bhk").hide();
+      $("#formfor1bhk").hide();
+      $("#formforcommericial").hide();
+      $("#3bhk").click(function () {
+        if ($(this).is(":checked")) {
+          console.log("3bhk Clicked");
+          $("#formfor3bhk").show();
+        } else {
+          $("#formfor3bhk").hide();
+        }
+      });
+      $("#2bhk").click(function () {
+        if ($(this).is(":checked")) {
+          console.log("2bhk Clicked");
+          $("#formfor2bhk").show();
+        } else {
+          $("#formfor2bhk").hide();
+        }
+      });
+      $("#1bhk").click(function () {
+        if ($(this).is(":checked")) {
+          console.log("1bhk Clicked");
+          $("#formfor1bhk").show();
+        } else {
+          $("#formfor1bhk").hide();
+        }
+      });
+      $("#commercial").click(function () {
+        if ($(this).is(":checked")) {
+          console.log("3bhk Clicked");
+          $("#formforcommericial").show();
+        } else {
+          $("#formforcommericial").hide();
+        }
+      });
+    </script>
+  </body>
+</html>

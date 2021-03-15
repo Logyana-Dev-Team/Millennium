@@ -1,0 +1,176 @@
+#qodef-page-outer {
+  margin-top: -130px;
+}
+#qodef-page-footer-bottom-area {
+  background-color: #19130b;
+}
+#qodef-page-inner {
+  padding: 0 0 5%;
+}
+#qodef-top-area {
+  background-color: #000000;
+  height: 34px;
+}
+#qodef-page-spinner .qodef-m-inner {
+  background-color: #1c0a09;
+  color: rgba(194, 133, 98, 0.3);
+}
+.qodef-page-title {
+  height: 700px;
+  background-image: url(../../wp-content/uploads/2020/04/blog-title-img-1.jpg);
+}
+.qodef-page-title .qodef-m-title {
+  color: #ffffff;
+}
+@media only screen and (max-width: 1024px) {
+  .qodef-page-title {
+    height: 400px;
+  }
+}
+.qodef-header--divided #qodef-page-header {
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0);
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  h1 {
+    font-size: 41px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 33px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+}
+
+.error404 #qodef-page-outer {
+  background-image: url(https://hendon.qodeinteractive.com/wp-content/uploads/2020/05/404-background-img.jpg);
+}
+#qodef-page-outer {
+  margin-top: -130px;
+}
+@media only screen and (max-width: 1024px) {
+  #qodef-page-outer {
+    margin-top: -70px;
+  }
+}
+#qodef-page-footer-bottom-area {
+  background-color: #19130b;
+}
+#qodef-page-inner {
+  padding: 0px;
+}
+#qodef-top-area {
+  background-color: #000000;
+  height: 34px;
+}
+#qodef-page-spinner .qodef-m-inner {
+  background-color: #1c0a09;
+  color: rgba(194, 133, 98, 0.3);
+}
+.qodef-page-title {
+  height: 700px;
+  background-image: url(wp-content/uploads/2020/04/blog-title-img-1.jpg);
+}
+.qodef-page-title .qodef-m-title {
+  color: #ffffff;
+}
+@media only screen and (max-width: 1024px) {
+  .qodef-page-title {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .qodef-page-title .qodef-m-content {
+    padding-top: 70px;
+  }
+}
+.qodef-header--divided #qodef-page-header {
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0);
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  h1 {
+    font-size: 41px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 33px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  .qodef-grid-contact-address {
+    width: 100%;
+  }
+}
+img.wp-smiley,
+img.emoji {
+  display: inline !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 1em !important;
+  width: 1em !important;
+  margin: 0 0.07em !important;
+  vertical-align: -0.1em !important;
+  background: none !important;
+  padding: 0 !important;
+}
+@media only screen and (min-width: 1025px) {
+  .page-id-882 #qodef-page-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .page-id-882 #qodef-page-outer {
+    padding-top: 90px !important;
+  }
+
+  .page-id-882.admin-bar #qodef-page-header {
+    top: 32px !important;
+  }
+  .qodef-grid-contact-address {
+    width: 40% !important;
+  }
+}
+
+.page-id-651
+  .qodef-header-navigation
+  > ul
+  > li.current-menu-ancestor
+  > a
+  .qodef-menu-item-text:after {
+  opacity: 0.6;
+}
+
+.page-id-651
+  .qodef-header-navigation
+  > ul
+  > li
+  > a
+  .qodef-menu-item-text:after {
+  opacity: 0.6;
+}
+
+.apart-type {
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}

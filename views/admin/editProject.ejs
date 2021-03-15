@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Webpixels" />
+    <title>Millennium | Edit Apartments</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="wp-content/uploads/2020/07/cropped-Favikon-32x32.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <!-- Font Awesome 5 -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <!-- Page CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/libs/fullcalendar/dist/fullcalendar.min.css"
+    />
+    <!-- Purpose CSS -->
+    <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet" />
+  </head>
+
+  <body class="application application-offset">
+    <!-- Chat modal -->
+    <!-- Customizer modal -->
+
+    <!-- Application container -->
+    <div class="container-fluid container-application">
+      <!-- Sidenav -->
+      <div class="sidenav" id="sidenav-main">
+        <!-- Sidenav header -->
+        <div class="sidenav-header d-flex align-items-center">
+          <a class="navbar-brand" href="/adminDashboard">
+            <img
+              src="../assets/img/brand/white.png"
+              class="navbar-brand-img"
+              alt="..."
+            />
+          </a>
+          <div class="ml-auto">
+            <!-- Sidenav toggler -->
+            <div
+              class="sidenav-toggler sidenav-toggler-dark d-md-none"
+              data-action="sidenav-unpin"
+              data-target="#sidenav-main"
+            >
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- User mini profile -->
+        <div
+          class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center"
+        >
+          <!-- Avatar -->
+          <div>
+            <a href="#" class="avatar rounded-circle avatar-xl">
+              <img
+                alt="Image placeholder"
+                src="../assets/img/theme/light/team-1-800x800.jpg"
+                class=""
+              />
+            </a>
+            <div class="mt-4">
+              <h5 class="mb-0 text-white">Millennium Developers</h5>
+            </div>
+          </div>
+          <!-- User info -->
+        </div>
+        <!-- Application nav -->
+        <div class="nav-application clearfix">
+          <a href="/adminDashboard" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/speedometer.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Dashboard</span>
+          </a>
+          <a href="/editHome" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/home.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Edit Home Page</span>
+          </a>
+          <a href="/editProject" class="btn btn-square text-sm active">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Projects</span>
+          </a>
+          <a href="/previousProjects" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/building (1).png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Completed Projects</span>
+          </a>
+          <a href="/userTable" class="btn btn-square text-sm">
+            <span class="btn-inner--icon d-block"
+              ><img src="assets/img/icons/man.png" width="80%"
+            /></span>
+            <span class="btn-inner--icon d-block pt-2">Users</span>
+          </a>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="main-content position-relative">
+        <!-- Main nav -->
+        <nav
+          class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border"
+          id="navbar-main"
+        >
+          <div class="container-fluid">
+            <!-- Brand + Toggler (for mobile devices) -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-main-collapse"
+              aria-controls="navbar-main-collapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- User's navbar -->
+            <div class="navbar-user d-lg-none ml-auto">
+              <ul class="navbar-nav flex-row align-items-center">
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <span class="avatar avatar-sm rounded-circle">
+                      <img
+                        alt="Image placeholder"
+                        src="../assets/img/theme/light/team-4-800x800.jpg"
+                      />
+                    </span>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow"
+                  >
+                    <a href="user/profile.html" class="dropdown-item">
+                      <i class="fas fa-user"></i>
+                      <span>My profile</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="authentication/login.html" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="collapse navbar-collapse navbar-collapse-fade"
+              id="navbar-main-collapse"
+            >
+              <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item d-lg-none">
+                  <a class="nav-link" href="/adminDashboard"> Overview </a>
+                </li>
+                <li class="border-top opacity-2 my-2"></li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/adminDashboard"> Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/editProjects">
+                    Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/previousProjects">
+                    Completed Projects
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-lg-0" href="/userTable"> Users </a>
+                </li>
+              </ul>
+              <ul
+                class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex"
+              >
+                <li class="nav-item dropdown dropdown-animate">
+                  <a
+                    class="nav-link pr-lg-0"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="media media-pill align-items-center">
+                      <span class="avatar rounded-circle">
+                        <img
+                          alt="Image placeholder"
+                          src="../assets/img/theme/light/team-1-800x800.jpg"
+                        />
+                      </span>
+                      <div class="ml-2 d-none d-lg-block">
+                        <span class="mb-0 text-sm font-weight-bold"
+                          >Millennium Developers</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow"
+                  >
+                    <h6 class="dropdown-header px-0">Hi, John!</h6>
+                    <a href="#!" class="dropdown-item">
+                      <i class="fas fa-user"></i>
+                      <span>My profile</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#!" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="page-content">
+          <!-- Create project modal -->
+          <div
+            class="modal fade"
+            id="modal-project-create"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <!-- Project name -->
+                  <div class="form-group">
+                    <label class="form-control-label"> Project name </label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <!-- Project description -->
+                  <div class="form-group">
+                    <label class="form-control-label mb-0">
+                      Project description
+                    </label>
+                    <small class="form-text text-muted mb-2 mt-0">
+                      This textarea will autosize while you type
+                    </small>
+                    <textarea
+                      class="form-control"
+                      data-toggle="autosize"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <!-- Project privacy -->
+                  <div class="form-group">
+                    <label class="form-control-label"> Project privacy </label>
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="radio"
+                            class="custom-control-input"
+                            name="project-privacy"
+                            id="radio-project-1"
+                          />
+                          <label
+                            class="custom-control-label form-control-label text-muted"
+                            for="radio-project-1"
+                            >Private</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="radio"
+                            class="custom-control-input"
+                            name="project-privacy"
+                            id="radio-project-2"
+                          />
+                          <label
+                            class="custom-control-label form-control-label text-muted"
+                            for="radio-project-2"
+                            >Team</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="radio"
+                            class="custom-control-input"
+                            name="project-privacy"
+                            id="radio-project-3"
+                            checked
+                          />
+                          <label
+                            class="custom-control-label form-control-label text-muted"
+                            for="radio-project-3"
+                            >Public</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Project members -->
+                  <div class="form-group">
+                    <label class="form-control-label"> Project members </label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <div class="list-group list-group-flush mb-4">
+                    <div class="list-group-item px-0">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar avatar-sm rounded-circle">
+                            <img
+                              alt="Image placeholder"
+                              src="../../assets/img/theme/light/team-1-800x800.jpg"
+                            />
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 text-sm mb-0"
+                            >John Sullivan</a
+                          >
+                          <p class="card-text text-sm text-muted mb-0">
+                            john@example.com
+                          </p>
+                        </div>
+                        <div class="col-auto text-right">
+                          <span class="text-sm text-info">Team Leader</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item px-0">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <!-- Avatar -->
+                          <a href="#" class="avatar avatar-sm rounded-circle">
+                            <img
+                              alt="Image placeholder"
+                              src="../../assets/img/theme/light/team-2-800x800.jpg"
+                            />
+                          </a>
+                        </div>
+                        <div class="col ml-n2">
+                          <a href="#!" class="d-block h6 text-sm mb-0"
+                            >Martin Lawrence</a
+                          >
+                          <p class="card-text text-sm text-muted mb-0">
+                            martin@example.com
+                          </p>
+                        </div>
+                        <div class="col-auto text-right">
+                          <span class="text-sm text-info">Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Project date -->
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <!-- Start date -->
+                        <div class="form-group">
+                          <label class="form-control-label"> Start date </label>
+                          <input type="date" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <!-- Start date -->
+                        <div class="form-group">
+                          <label class="form-control-label"> End date </label>
+                          <input type="date" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Project tags -->
+                  <div class="form-group">
+                    <label class="form-control-label"> Project tags </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="HTML, CSS3, Bootstrap, Photoshop, VueJS"
+                      data-toggle="tags"
+                      placeholder="Type here..."
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary rounded-pill mr-auto"
+                    data-dismiss="modal"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-link text-muted px-2"
+                  >
+                    Archive
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-link text-danger px-2"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Page title -->
+          <div class="page-title">
+            <div class="row justify-content-between align-items-center">
+              <div
+                class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0"
+              >
+                <!-- Page title + Go Back button -->
+                <div class="d-inline-block">
+                  <h5 class="h4 d-inline-block font-weight-400 mb-0 text-white">
+                    Projects
+                  </h5>
+                </div>
+                <!-- Additional info -->
+                <div class="align-items-center ml-4 d-inline-flex">
+                  <span class="h4 text-info mb-0 mr-2"
+                    ><%= apartmentCount %>
+                  </span>
+                  <span class="text-sm opacity-7 text-white"
+                    >Running projects</span
+                  >
+                </div>
+              </div>
+              <div
+                class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end"
+              >
+                <a
+                  href="/addProject"
+                  class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4"
+                  style="
+                    width: 126px;
+                    height: auto;
+                    border-radius: 0% !important;
+                  "
+                  >Add Project
+                  <span class="btn-inner--icon"
+                    ><i class="fas fa-plus"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project cards -->
+          <div class="row">
+            <% apartment.forEach((apartments,index) => {%>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="card hover-shadow-lg">
+                <div class="card-header border-0 pb-0">
+                  <div class="">
+                    <h4 class="">
+                      <a href="#" style="color: #6e00ff"
+                        ><%= apartments.projName %></a
+                      >
+                    </h4>
+                    <div class="text-right"></div>
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <a
+                    href="#"
+                    class="avatar rounded-circle avatar-lg hover-translate-y-n3"
+                  >
+                    <img
+                      alt="Image placeholder"
+                      src="assets/img/uploads/<%= apartments.banner1 %>"
+                      class=""
+                    />
+                  </a>
+
+                  <div style="padding-top: 10px; padding-bottom: 5px">
+                    <span
+                      >Last Updated :
+                      <span style="font-weight: 600"
+                        ><%= date[index] %></span
+                      ></span
+                    >
+                  </div>
+                  <span class="clearfix"></span>
+                </div>
+                <div class="card-footer">
+                  <div class="actions d-flex justify-content-between">
+                    <a
+                      href="/editSingleApartment/<%= apartments.id %>"
+                      class="action-item"
+                    >
+                      <i class="far fa-edit"></i>
+                    </a>
+                    <span
+                      onclick="moveToPrevious('<%= apartments.id %>')"
+                      class="badge badge-soft-primary"
+                      style="padding: 10px; color: #6e00ff; cursor: pointer"
+                    >
+                      Move to Completed
+                    </span>
+                    <button
+                      onclick="deleteProject('<%= apartments.id %>')"
+                      class="action-item text-danger"
+                    >
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%}); %>
+            <div
+              aria-live="polite"
+              aria-atomic="true"
+              class="d-flex justify-content-center align-items-center"
+              style="min-height: 200px"
+            >
+              <div
+                class="toast"
+                id="apartmentremoved"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div class="toast-header">
+                  <strong class="mr-auto" style="color: red"
+                    ><i class="fas fa-check"></i>&nbsp;Deleted</strong
+                  >
+                </div>
+                <div class="toast-body">Project Deleted Successfully</div>
+              </div>
+              <div
+                class="toast"
+                style="
+                  background-color: hsl(112deg 100% 50% / 20%);
+                  border: 5px solid rgb(0 255 0 / 25%);
+                "
+                id="apartmentmoved"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div class="toast-header">
+                  <strong class="mr-auto" style="color: green"
+                    ><i class="fas fa-check"></i>&nbsp;Moved</strong
+                  >
+                </div>
+                <div class="toast-body">
+                  Project moved to Completed Projects Successfully
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/purpose.core.js"></script>
+    <script src="../assets/libs/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/moment/min/moment.min.js"></script>
+    <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script src="../assets/js/purpose.js"></script>
+    <script src="../assets/js/demo.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function deleteProject(apartId) {
+        $.ajax({
+          url: "/deleteApartment",
+          method: "post",
+          dataType: "json",
+          data: { apartId: apartId },
+          success: function (response) {
+            window.setTimeout(function () {
+              location.reload();
+            }, 3000);
+            $("#apartmentremoved").toast("show");
+          },
+          error: function (response) {
+            alert("server error occured");
+          },
+        });
+      }
+    </script>
+    <script>
+      function moveToPrevious(apartId) {
+        console.log("clicked" + apartId);
+        $.ajax({
+          url: "/moveToPrevious",
+          method: "post",
+          dataType: "json",
+          data: { apartId: apartId },
+          success: function (response) {
+            window.setTimeout(function () {
+              location.reload();
+            }, 3000);
+            $("#apartmentmoved").toast("show");
+          },
+          error: function (response) {
+            alert("server error occured");
+          },
+        });
+      }
+    </script>
+    <!-- <script src="js/theme.min.js"></script> -->
+  </body>
+</html>
