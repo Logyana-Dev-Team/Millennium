@@ -201,12 +201,12 @@ app.get("/about-us", async function (req, res) {
   res.render("about-us", { homepage: homepage });
 });
 
-app.get("/apartments", async function (req, res) {
+app.get("/projects", async function (req, res) {
   const apartment = await Apartment.find({});
   res.render("apartments", { apartment: apartment });
 });
 
-app.get("/prevApartments", async function (req, res) {
+app.get("/previous-projects", async function (req, res) {
   const apartment = await PrevApartment.find({});
   res.render("prevApartment", { apartment: apartment });
 });
