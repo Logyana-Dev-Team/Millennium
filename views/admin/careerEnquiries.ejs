@@ -243,7 +243,7 @@
         </nav>
 
         <!-- Page content -->
-        <div class="row"><h1 style="color: #fff">User Enquiries</h1></div>
+        <div class="row"><h1 style="color: #fff">Career Enquiries</h1></div>
         <div class="card">
           <div class="table-responsive" style="padding: 10px">
             <table
@@ -257,28 +257,26 @@
                   <th class="th-sm">User Name</th>
                   <th class="th-sm">Mobile No</th>
                   <th class="th-sm">Email</th>
-                  <th class="th-sm">Project</th>
-                  <th class="th-sm">Date & Time</th>
-                  <th class="th-sm">Message</th>
-                  <th class="th-sm">Actions</th>
+                  <th class="th-sm">Department</th>
+                  <th class="th-sm">Experience</th>
+                  <th class="th-sm">Resume</th>
                 </tr>
               </thead>
               <tbody>
-                <% users.forEach(users => { %>
+                <% careerEnquiry.forEach(users => { %>
                 <tr>
                   <td style="color: #6e00ff"><%= users.name %></td>
-                  <td><%= users.mobile %></td>
+                  <td><%= users.mobileNo %></td>
                   <td><%= users.email %></td>
-                  <td><%= users.projName %></td>
-                  <td><%= users.date %>&nbsp;<%= users.time %></td>
-                  <td><%= users.message %></td>
+                  <td><%= users.department %></td>
+                  <td><%= users.experience %></td>
                   <td>
-                    <button
-                      onclick="removeUser('<%= users.id %>')"
-                      class="action-item text-danger"
+                    <a
+                      href="public/assets/img/uploads/<%= users.resume %>"
+                      download
                     >
-                      <i class="far fa-trash-alt"></i>
-                    </button>
+                      <%= users.resume %></a
+                    >
                   </td>
                 </tr>
                 <% }); %>

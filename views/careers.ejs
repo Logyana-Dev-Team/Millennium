@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, user-scalable=yes"
     />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <title>Projects &#8211; Millennium</title>
+    <title>Careers &#8211; Millennium</title>
 
     <link
       rel="stylesheet"
@@ -64,20 +64,9 @@
     />
     <link
       rel="stylesheet"
-      id="rabbit_css-css"
-      href="../../export.qodethemes.com/_toolbar/assets/css/rbt-modules7263.css?ver=5.4.4"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
       href="../wp-content/cache/minify/edd85.css"
       media="all"
     />
-    <style id="rs-plugin-settings-inline-css" type="text/css">
-      #rs-demo-id {
-      }
-    </style>
     <link
       rel="stylesheet"
       href="../wp-content/cache/minify/7cd2d.css"
@@ -124,8 +113,8 @@
         color: rgba(194, 133, 98, 0.3);
       }
       .qodef-page-title {
-        height: 700px;
-        background-image: url(../wp-content/uploads/2020/04/blog-title-img-1.jpg);
+        height: 600px;
+        background-image: url(../wp-content/uploads/2020/04/careers.jpg);
       }
       .qodef-page-title .qodef-m-title {
         color: #ffffff;
@@ -363,6 +352,14 @@
         opacity: 0.6;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"
+    />
   </head>
   <body
     class="page-template page-template-page-full-width page-template-page-full-width-php page page-id-2112 theme-hendon qode-framework-1.1.3 woocommerce-no-js qodef-age-verification--opened qodef-back-to-top--enabled qodef-content-grid-1300 qodef-header--light qodef-header--divided qodef-header-appearance--none qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--animate-height hendon-core-1.0.1 hendon-1.1 qodef-search--covers-header elementor-default elementor-kit-10 elementor-page elementor-page-2112"
@@ -749,7 +746,7 @@
         >
           <div class="qodef-m-inner">
             <div class="qodef-m-content qodef-content-grid">
-              <h1 class="qodef-m-title entry-title">Ongoing Projects</h1>
+              <h1 class="qodef-m-title entry-title">Careers</h1>
             </div>
           </div>
         </div>
@@ -777,6 +774,7 @@
                       >
                         <div
                           class="elementor-container elementor-column-gap-no"
+                          style="width: 50%"
                         >
                           <div class="elementor-row">
                             <div
@@ -800,51 +798,304 @@
                                         data-options='{"plugin":"hendon_core","module":"plugins\/property\/post-types\/apartment\/shortcodes","shortcode":"apartment-list","post_type":"apartment-item","next_page":"2","layout":"info-below-with-feature-titles","title_tag":"h5","behavior":"columns","images_proportion":"full","columns":"3","columns_responsive":"custom","columns_1440":"3","columns_1366":"3","columns_1024":"2","columns_768":"2","columns_680":"1","columns_480":"1","space":"normal","posts_per_page":"-1","orderby":"date","order":"ASC","additional_params":"tax","tax":"apartment-category","tax_slug":"condo","pagination_type":"no-pagination","object_class_name":"HendonCoreApartmentListShortcode","additional_query_args":{"tax_query":[{"taxonomy":"apartment-category","field":"slug","terms":"condo"}]},"query_array":{"post_status":"publish","post_type":"apartment-item","posts_per_page":"-1","orderby":"date","order":"ASC","ignore_sticky_posts":1,"paged":1,"tax_query":[{"taxonomy":"apartment-category","field":"slug","terms":"condo"}]},"item_classes":"qodef-e qodef-grid-item","posts_count":6,"space_value":15}'
                                       >
                                         <div class="qodef-grid-inner clear">
-                                          <%apartment.forEach(function(apartments){%>
-                                          <article
-                                            class="qodef-e qodef-grid-item qodef-item--full post-2007 apartment-item type-apartment-item status-publish has-post-thumbnail hentry apartment-category-condo"
+                                          <section
+                                            class="elementor-element elementor-element-635e73a elementor-section-full_width qodef-elementor-content-grid elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
+                                            data-id="635e73a"
+                                            data-element_type="section"
                                           >
-                                            <div class="qodef-e-inner">
-                                              <div class="qodef-e-image">
+                                            <div
+                                              class="elementor-container elementor-column-gap-no"
+                                              style="width: 90%"
+                                            >
+                                              <div class="elementor-row">
                                                 <div
-                                                  class="qodef-e-media-image"
+                                                  class="elementor-element elementor-element-b13a51c elementor-column elementor-col-100 elementor-top-column"
+                                                  data-id="b13a51c"
+                                                  data-element_type="column"
+                                                  data-settings='{"background_background":"classic"}'
                                                 >
-                                                  <a
-                                                    itemprop="url"
-                                                    href="/apartment/<%= apartments.id %>"
+                                                  <div
+                                                    class="elementor-column-wrap elementor-element-populated"
                                                   >
-                                                    <img
-                                                      width="800"
-                                                      height="610"
-                                                      src="assets/img/uploads/<%= apartments.banner1 %>"
-                                                      class="attachment-full size-full wp-post-image"
-                                                      alt="a"
-                                                      sizes="(max-width: 800px) 100vw, 800px"
-                                                    />
-                                                  </a>
-                                                </div>
-                                              </div>
-                                              <div class="qodef-e-content">
-                                                <div
-                                                  class="qodef-e-content-inner"
-                                                >
-                                                  <h5
-                                                    itemprop="name"
-                                                    class="qodef-e-title entry-title"
-                                                  >
-                                                    <a
-                                                      itemprop="url"
-                                                      class="qodef-e-title-link"
-                                                      href="/apartment/<%= apartments.id %> "
+                                                    <div
+                                                      class="elementor-widget-wrap"
                                                     >
-                                                      <%= apartments.projName %>
-                                                    </a>
-                                                  </h5>
+                                                      <div
+                                                        class="elementor-element elementor-element-d80b821 elementor-widget elementor-widget-hendon_core_section_title"
+                                                        data-id="d80b821"
+                                                        data-element_type="widget"
+                                                        data-widget_type="hendon_core_section_title.default"
+                                                      >
+                                                        <div
+                                                          class="elementor-widget-container"
+                                                        >
+                                                          <div
+                                                            class="qodef-shortcode qodef-m qodef-section-title qodef-alignment--center"
+                                                          >
+                                                            <h3
+                                                              class="qodef-m-title"
+                                                            >
+                                                              SHARE YOUR DETAILS
+                                                              WITH US TO START
+                                                              THE PROCESS.
+                                                            </h3>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div
+                                                        class="elementor-element elementor-element-6806480 elementor-widget elementor-widget-wp-widget-hendon_core_contact_form_7"
+                                                        data-id="6806480"
+                                                        data-element_type="widget"
+                                                        data-widget_type="wp-widget-hendon_core_contact_form_7.default"
+                                                      >
+                                                        <div
+                                                          class="elementor-widget-container"
+                                                        >
+                                                          <div
+                                                            class="qodef-contact-form-7"
+                                                          >
+                                                            <div
+                                                              role="form"
+                                                              class="wpcf7"
+                                                              id="wpcf7-f260-p1239-o1"
+                                                              lang="en-US"
+                                                              dir="ltr"
+                                                            >
+                                                              <div
+                                                                class="screen-reader-response"
+                                                              ></div>
+                                                              <form
+                                                                action="/careerFrom"
+                                                                method="post"
+                                                                class="wpcf7-form"
+                                                                enctype="multipart/form-data"
+                                                              >
+                                                                <div
+                                                                  class="qodef-main-cf7 qodef-grid qodef-layout--template"
+                                                                >
+                                                                  <div
+                                                                    class="qodef-grid-inner"
+                                                                  >
+                                                                    <div
+                                                                      class="qodef-grid-item qodef-col--12"
+                                                                    >
+                                                                      <span
+                                                                        class="wpcf7-form-control-wrap your-name"
+                                                                        ><input
+                                                                          type="text"
+                                                                          name="yourName"
+                                                                          size="40"
+                                                                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                          placeholder="Full name"
+                                                                          required
+                                                                      /></span>
+                                                                    </div>
+                                                                    <div
+                                                                      class="qodef-grid-item qodef-col--12"
+                                                                    >
+                                                                      <span
+                                                                        class="wpcf7-form-control-wrap your-name"
+                                                                        ><input
+                                                                          type="tel"
+                                                                          id="phone"
+                                                                          placeholder="Mobile Number"
+                                                                          name="yourMobile"
+                                                                          size="40"
+                                                                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                          pattern="(7|8|9)\d{9}"
+                                                                          required="required"
+                                                                          title="Enter a valid 10-digit no"
+                                                                      /></span>
+                                                                    </div>
+                                                                    <div
+                                                                      class="qodef-grid-item qodef-col--12"
+                                                                    >
+                                                                      <span
+                                                                        class="wpcf7-form-control-wrap your-email"
+                                                                        ><input
+                                                                          type="email"
+                                                                          name="yourEmail"
+                                                                          size="40"
+                                                                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                          placeholder="E-mail"
+                                                                          required
+                                                                      /></span>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div
+                                                                    class="qodef-grid-item qodef-col--6"
+                                                                  >
+                                                                    <span
+                                                                      class="wpcf7-form-control-wrap your-time"
+                                                                      ><select
+                                                                        name="department"
+                                                                        class="wpcf7-form-control wpcf7-select"
+                                                                        aria-invalid="false"
+                                                                        required
+                                                                      >
+                                                                        <option>
+                                                                          Select
+                                                                          Department
+                                                                        </option>
+                                                                        <option></option></select
+                                                                    ></span>
+                                                                  </div>
+                                                                  <div
+                                                                    class="qodef-grid-item qodef-col--6"
+                                                                  >
+                                                                    <span
+                                                                      class="wpcf7-form-control-wrap your-time"
+                                                                      ><select
+                                                                        name="experience"
+                                                                        class="wpcf7-form-control wpcf7-select"
+                                                                        aria-invalid="false"
+                                                                        required
+                                                                      >
+                                                                        <option>
+                                                                          Experience
+                                                                          In
+                                                                          Years
+                                                                        </option>
+                                                                        <option>
+                                                                          Less
+                                                                          than 1
+                                                                          year
+                                                                        </option>
+                                                                        <option>
+                                                                          1+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          2+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          3+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          4+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          5+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          6+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          7+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          8+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          9+
+                                                                          years
+                                                                        </option>
+                                                                        <option>
+                                                                          10+
+                                                                          years
+                                                                        </option>
+                                                                      </select></span
+                                                                    >
+                                                                  </div>
+                                                                  <div
+                                                                    class="qodef-grid-item qodef-col--12"
+                                                                  >
+                                                                    <label
+                                                                      style="
+                                                                        position: relative;
+                                                                        display: inline-block;
+                                                                        width: 100%;
+                                                                        text-align: left;
+                                                                        vertical-align: top;
+                                                                        padding: 7px
+                                                                          20px
+                                                                          7px 0;
+                                                                        font-family: Raleway;
+                                                                        font-size: 13px;
+                                                                        line-height: 24px;
+                                                                        font-weight: 500;
+                                                                        text-transform: none;
+                                                                        letter-spacing: 0.2em;
+                                                                        color: #000;
+                                                                        background-color: transparent;
+                                                                        outline: 0;
+                                                                        cursor: default;
+                                                                        -webkit-appearance: none;
+                                                                        -webkit-transition: color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          background-color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          border-color
+                                                                            0.2s
+                                                                            ease-out;
+                                                                        -o-transition: color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          background-color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          border-color
+                                                                            0.2s
+                                                                            ease-out;
+                                                                        transition: color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          background-color
+                                                                            0.2s
+                                                                            ease-out,
+                                                                          border-color
+                                                                            0.2s
+                                                                            ease-out;
+                                                                      "
+                                                                      >Upload
+                                                                      Your
+                                                                      Resume</label
+                                                                    >
+                                                                    <span
+                                                                      class="wpcf7-form-control-wrap your-email"
+                                                                      ><input
+                                                                        type="file"
+                                                                        name="resume"
+                                                                        size="40"
+                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                        placeholder="Upload your resume"
+                                                                        required
+                                                                    /></span>
+                                                                  </div>
+                                                                  <div
+                                                                    class="qodef-grid-item qodef-col--12"
+                                                                  >
+                                                                    <button
+                                                                      type="submit"
+                                                                      class="wpcf7-form-control wpcf7-submit qodef-button qodef-size--normal qodef-type--filled qodef-m"
+                                                                    >
+                                                                      <span
+                                                                        class="qodef-m-text"
+                                                                        >Submit</span
+                                                                      >
+                                                                    </button>
+                                                                  </div>
+                                                                </div>
+                                                              </form>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
                                                 </div>
                                               </div>
                                             </div>
-                                          </article>
-                                          <% }) %>
+                                          </section>
                                         </div>
                                       </div>
                                     </div>
@@ -1354,41 +1605,38 @@
     <script type="text/javascript">
       var sbiajaxurl = "../wp-admin/admin-ajax.html";
     </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400%7CRaleway:500%7CCormorant+Garamond:400"
+      rel="stylesheet"
+      property="stylesheet"
+      media="all"
+      type="text/css"
+    />
     <script type="text/javascript">
       var c = document.body.className;
       c = c.replace(/woocommerce-no-js/, "woocommerce-js");
       document.body.className = c;
     </script>
     <script type="text/javascript">
-      /* <![CDATA[ */
-      var wpcf7 = {
-        apiSettings: {
-          root:
-            "https:\/\/hendon.qodeinteractive.com\/wp-json\/contact-form-7\/v1",
-          namespace: "contact-form-7\/v1",
-        },
-        cached: "1",
-      };
-      /* ]]> */
+      if (typeof revslider_showDoubleJqueryError === "undefined") {
+        function revslider_showDoubleJqueryError(sliderID) {
+          var err = "<div class='rs_error_message_box'>";
+          err += "<div class='rs_error_message_oops'>Oops...</div>";
+          err += "<div class='rs_error_message_content'>";
+          err +=
+            "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+          err +=
+            "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+          err +=
+            "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+          err += "</div>";
+          err += "</div>";
+          jQuery(sliderID).show().html(err);
+        }
+      }
     </script>
     <script src="../wp-content/cache/minify/1681a.js"></script>
-    <script
-      type="text/javascript"
-      src="../../export.qodethemes.com/_toolbar/assets/js/rbt-modules7263.js?ver=5.4.4"
-    ></script>
     <script src="../wp-content/cache/minify/6d18f.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var wc_add_to_cart_params = {
-        ajax_url: "\/wp-admin\/admin-ajax.php",
-        wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
-        i18n_view_cart: "View cart",
-        cart_url: "https:\/\/hendon.qodeinteractive.com",
-        is_cart: "",
-        cart_redirect_after_add: "no",
-      };
-      /* ]]> */
-    </script>
     <script src="../wp-content/cache/minify/dc06c.js"></script>
     <script type="text/javascript">
       /* <![CDATA[ */
@@ -1399,17 +1647,6 @@
       /* ]]> */
     </script>
     <script src="../wp-content/cache/minify/63a69.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var wc_cart_fragments_params = {
-        ajax_url: "\/wp-admin\/admin-ajax.php",
-        wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
-        cart_hash_key: "wc_cart_hash_fef14d197c5fa9b78f47b75e042cc15e",
-        fragment_name: "wc_fragments_fef14d197c5fa9b78f47b75e042cc15e",
-        request_timeout: "5000",
-      };
-      /* ]]> */
-    </script>
     <script src="../wp-content/cache/minify/971bb.js"></script>
     <script type="text/javascript">
       /* <![CDATA[ */
@@ -1426,7 +1663,7 @@
       };
       /* ]]> */
     </script>
-    <script src="../wp-content/cache/minify/0c771.js"></script>
+    <script src="../wp-content/cache/minify/d2047.js"></script>
     <script type="text/javascript">
       var elementorFrontendConfig = {
         environmentMode: { edit: false, wpPreview: false },
@@ -1456,8 +1693,8 @@
           editorPreferences: [],
         },
         post: {
-          id: 2112,
-          title: "Feature%20Bellow%20%E2%80%93%20Hendon",
+          id: 1239,
+          title: "Contact%20Us%20%E2%80%93%20Hendon",
           excerpt: "",
           featuredImage: false,
         },

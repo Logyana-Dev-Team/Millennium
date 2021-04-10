@@ -3346,8 +3346,8 @@ h2 {
   font-family: cormorant garamond !important;
   text-transform: uppercase !important;
   color: #000;
-  font-size: 64px !important;
-  font-weight: 400 !important;
+  font-size: 64px;
+  font-weight: 400;
   line-height: 1.09em !important;
   letter-spacing: 0.15em !important;
   margin: 25px 0 !important;
@@ -3574,6 +3574,7 @@ input[type="search"],
 input[type="tel"],
 input[type="text"],
 input[type="url"],
+input[type="file"],
 textarea {
   position: relative;
   display: inline-block;
@@ -3786,11 +3787,11 @@ select {
   display: block;
   height: 38px;
   width: 100%;
-  margin: 0 0 20px;
+  margin: 0 0 20px !important;
   padding: 7px 20px 7px 0;
-  font-family: Raleway;
-  font-size: 13px;
-  line-height: 24px;
+  font-family: Raleway !important;
+  font-size: 13px !important;
+  line-height: 24px !important;
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0.2em;
@@ -5055,6 +5056,7 @@ div.wpcf7-validation-errors {
 }
 #qodef-page-outer {
   position: relative;
+  margin-top: 0 !important;
 }
 #qodef-page-inner {
   position: relative;
@@ -7179,12 +7181,10 @@ blockquote cite {
   text-align: center;
 }
 #qodef-page-header {
-  position: relative;
-  display: inline-block;
+  position: fixed;
   width: 100%;
-  vertical-align: top;
   height: 100px;
-  background-color: #fff;
+  top: 0;
   z-index: 100;
 }
 #qodef-page-header .qodef-header-logo-link {
@@ -18424,7 +18424,7 @@ input[type="text"]::-ms-clear {
 }
 @media only screen and (max-width: 680px) {
   h1 {
-    font-size: 41px;
+    font-size: 41px !important;
   }
   h2 {
     font-size: 40px;

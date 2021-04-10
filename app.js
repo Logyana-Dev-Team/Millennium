@@ -166,6 +166,20 @@ const userSchema = new mongoose.Schema(
 
 const User = new mongoose.model("User", userSchema);
 
+const careerSchema = new mongoose.Schema(
+  {
+    name: String,
+    mobileNo: String,
+    email: String,
+    department: String,
+    experience: String,
+    resume: String,
+  },
+  { timestamp: true }
+);
+
+const Career = new mongoose.model("Career", careerSchema);
+
 passport.serializeUser(function (admin, done) {
   done(null, admin.id);
 });
@@ -213,6 +227,10 @@ app.get("/previous-projects", async function (req, res) {
 
 app.get("/gallery", async function (req, res) {
   res.render("gallery");
+});
+
+app.get("/careers", async (req, res) => {
+  res.render("careers");
 });
 
 app.get("/contact-us", async function (req, res) {
@@ -290,6 +308,14 @@ app.get("/editSingleApartment/:id", async function (req, res) {
   res.render("admin/editSingleApartment", {
     singleApartment: singleApartment,
     errorMsg,
+  });
+});
+
+app.get("/careerEnquiries", async (req, res) => {
+  var errorMsg = req.flash("error")[0];
+  const careerEnquiry = await Career.find({});
+  res.render("admin/careerEnquiries", {
+    careerEnquiry: careerEnquiry,
   });
 });
 
@@ -716,6 +742,27 @@ app.post(
     );
   }
 );
+
+app.post("/careerFrom", upload.single("resume"), async (req, res) => {
+  obj = {
+    name: req.body.yourName,
+    mobileNo: req.body.yourMobile,
+    email: req.body.yourEmail,
+    department: req.body.department,
+    experience: req.body.experience,
+    resume: req.file.filename,
+  };
+  console.log(obj);
+
+  Career.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(item);
+      res.redirect("/careers");
+    }
+  });
+});
 
 app.post("/deleteApartment", async function (req, res) {
   Apartment.findByIdAndRemove({ _id: req.body.apartId }, (err) => {

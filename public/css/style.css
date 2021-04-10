@@ -95,7 +95,7 @@
 }
 .qodef-header--divided #qodef-page-header {
   height: 130px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(0 0 0 / 35%);
 }
 @media only screen and (max-width: 768px) {
   h1 {
@@ -117,6 +117,13 @@
   }
   .qodef-grid-contact-address {
     width: 100%;
+  }
+  .qodef-m-text {
+    letter-spacing: 0;
+  }
+  .qodef-h1,
+  h1 {
+    font-size: 84px;
   }
 }
 img.wp-smiley,
