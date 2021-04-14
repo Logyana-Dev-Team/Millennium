@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:300,400,600,700);
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 :root {
   --blue: #2684ff;
@@ -42,7 +43,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Cormorant Garamond", serif;
+  font-family: montse;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(31, 45, 61, 0);
@@ -61,7 +62,7 @@ section {
 }
 body {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
@@ -2513,7 +2514,7 @@ textarea.form-control.is-invalid {
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0.75rem 1.75rem;
-  font-size: 1rem;
+  font-size: 14px !important;
   line-height: 1.5;
   border-radius: 0.25rem;
   -webkit-transition: color 0.15s ease-in-out,
@@ -4913,7 +4914,7 @@ input[type="submit"].btn-block {
   border-top: 0;
 }
 .card-footer {
-  padding: 1.25rem 1.5rem;
+  padding: 15px 5px 15px 5px;
   background-color: transparent;
   border-top: 1px solid #eff2f7;
 }
@@ -13583,7 +13584,7 @@ a.text-muted:hover {
   font-size: 0.75rem !important;
 }
 .text-sm {
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 .text-lg {
   font-size: 1.25rem !important;
@@ -21875,7 +21876,7 @@ section {
 .table thead th {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0;
   background-color: transparent;
@@ -21891,9 +21892,8 @@ section {
 }
 .table td,
 .table th {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
-  white-space: nowrap;
 }
 .table.align-items-center td,
 .table.align-items-center th {

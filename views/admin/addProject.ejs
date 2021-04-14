@@ -245,6 +245,7 @@
               enctype="multipart/form-data"
             >
               <div class="mb-3">
+                <label class="inputLabel">Image for Banner 1:</label>
                 <input
                   type="file"
                   name="banner1"
@@ -257,6 +258,13 @@
                   <i class="fa fa-upload"></i>
                   <span>Choose a file…</span>
                 </label>
+                <small class="form-text text-muted"
+                  >Image resolution should be
+                  <span style="font-weight: bold; color: #6e00ff"
+                    >1920px x 1100px</span
+                  >
+                  for better resolution.</small
+                >
               </div>
               <div class="form-group pb-2">
                 <label class="inputLabel" for="bannerText">Banner Text :</label>
@@ -283,6 +291,11 @@
                   <i class="fa fa-upload"></i>
                   <span>Choose a file…</span>
                 </label>
+                <small class="form-text text-muted"
+                  >Upload
+                  <span style="color: #6e00ff; font-weight: bold">PDF</span> of
+                  floorplan of the apartment.</small
+                >
               </div>
               <div class="form-group pb-2">
                 <label class="inputLabel" for="section1Header"
@@ -313,6 +326,7 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
+                    <label class="inputLabel">Image 1 for Section 1</label>
                     <input
                       type="file"
                       name="section1img1"
@@ -325,10 +339,18 @@
                       <i class="fa fa-upload"></i>
                       <span>Choose a file…</span>
                     </label>
+                    <small class="form-text text-muted"
+                      >Image resolution should be
+                      <span style="font-weight: bold; color: #6e00ff"
+                        >530px x 620px</span
+                      >
+                      for better resolution.</small
+                    >
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
+                    <label class="inputLabel">Image 2 for Section 1</label>
                     <input
                       type="file"
                       name="section1img2"
@@ -341,6 +363,13 @@
                       <i class="fa fa-upload"></i>
                       <span>Choose a file…</span>
                     </label>
+                    <small class="form-text text-muted"
+                      >Image resolution should be
+                      <span style="font-weight: bold; color: #6e00ff"
+                        >433px x 536px</span
+                      >
+                      for better resolution.</small
+                    >
                   </div>
                 </div>
               </div>
@@ -400,6 +429,10 @@
                   >Commercial</label
                 >
               </div>
+              <small class="form-text text-muted" style="margin-bottom: 1.25rem"
+                >Select <span style="color: #6e00ff">only</span> types of
+                apartments you want to enter.</small
+              >
               <div
                 id="formfor3bhk"
                 style="
@@ -436,7 +469,13 @@
                         <span>Choose a file…</span>
                       </label>
                       <small class="form-text text-muted"
-                        >1000 x 800px ideal size for hi-res displays</small
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
                       >
                     </div>
                   </div>
@@ -508,7 +547,13 @@
                         <span>Choose a file…</span>
                       </label>
                       <small class="form-text text-muted"
-                        >1000 x 800px ideal size for hi-res displays</small
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
                       >
                     </div>
                   </div>
@@ -580,7 +625,13 @@
                         <span>Choose a file…</span>
                       </label>
                       <small class="form-text text-muted"
-                        >1000 x 800px ideal size for hi-res displays</small
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
                       >
                     </div>
                   </div>
@@ -655,7 +706,13 @@
                         <span>Choose a file…</span>
                       </label>
                       <small class="form-text text-muted"
-                        >1000 x 800px ideal size for hi-res displays</small
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
                       >
                     </div>
                   </div>
@@ -707,6 +764,15 @@
               <label class="inputLabel" for="unp-product-tags"
                 >Enter info abut nearby spots :</label
               >
+              <div class="alert alert-success" role="alert">
+                Enter Information about nearby locations. You can also change
+                the locations types given below.
+                <br /><br />
+                <small style="font-weight: bold"
+                  >Note: Given location types are only for example purpose you
+                  can change it according to your preference.</small
+                >
+              </div>
               <div class="row">
                 <div class="col-6">
                   <div class="form-group py-2">
@@ -717,6 +783,7 @@
                       value="Restaurant"
                       id="spot1"
                     />
+                    <small class="form-text text-muted"></small>
                   </div>
                   <div class="form-group py-2">
                     <textarea
@@ -818,7 +885,11 @@
                   <span>Choose a file…</span>
                 </label>
                 <small class="form-text text-muted"
-                  >1000 x 800px ideal size for hi-res displays</small
+                  >Image resolution should be
+                  <span style="font-weight: bold; color: #6e00ff"
+                    >650px x 525px</span
+                  >
+                  for better resolution.</small
                 >
               </div>
               <button class="btn btn-primary btn-block" type="submit">

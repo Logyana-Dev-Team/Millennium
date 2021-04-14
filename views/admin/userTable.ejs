@@ -86,7 +86,7 @@
         </div>
         <!-- Application nav -->
         <div class="nav-application clearfix">
-          <a href="/adminDashboard" class="btn btn-square text-sm active">
+          <a href="/adminDashboard" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
               ><img src="assets/img/icons/speedometer.png" width="80%"
             /></span>
@@ -110,7 +110,7 @@
             /></span>
             <span class="btn-inner--icon d-block pt-2">Completed Projects</span>
           </a>
-          <a href="/userTable" class="btn btn-square text-sm">
+          <a href="/userTable" class="btn btn-square text-sm active">
             <span class="btn-inner--icon d-block"
               ><img src="assets/img/icons/man.png" width="80%"
             /></span>
@@ -258,7 +258,6 @@
                   <th class="th-sm">Mobile No</th>
                   <th class="th-sm">Email</th>
                   <th class="th-sm">Project</th>
-                  <th class="th-sm">Date & Time</th>
                   <th class="th-sm">Message</th>
                   <th class="th-sm">Actions</th>
                 </tr>
@@ -270,7 +269,6 @@
                   <td><%= users.mobile %></td>
                   <td><%= users.email %></td>
                   <td><%= users.projName %></td>
-                  <td><%= users.date %>&nbsp;<%= users.time %></td>
                   <td><%= users.message %></td>
                   <td>
                     <button
