@@ -75,7 +75,7 @@ passport.use("admin", Admin.createStrategy());
 
 const homePageSchema = new mongoose.Schema(
   {
-    banner1: String,
+    banner1: [{ img: [imageSchema] }],
     banner2: String,
     section1image1: String,
     section1image2: String,
@@ -180,6 +180,16 @@ const careerSchema = new mongoose.Schema(
 
 const Career = new mongoose.model("Career", careerSchema);
 
+const gallerySchema = new mongoose.Schema(
+  {
+    image: String,
+    text: String,
+  },
+  { timestamp: true }
+);
+
+const Gallery = new mongoose.model("Gallery", gallerySchema);
+
 passport.serializeUser(function (admin, done) {
   done(null, admin.id);
 });
@@ -207,7 +217,15 @@ var upload = multer({ storage: storage });
 app.get("/", async function (req, res) {
   const homepage = await Homepage.findById({ _id: "6035e9c6871e8d1b201362ab" });
   const apartment = await Apartment.find({});
-  res.render("index", { homepage: homepage, apartment: apartment });
+  const banner1 = homepage.banner1;
+  const [banner1imgs] = banner1.map((src, index) => {
+    return src.img;
+  });
+  res.render("index", {
+    homepage: homepage,
+    apartment: apartment,
+    banner1imgs: banner1imgs,
+  });
 });
 
 app.get("/about-us", async function (req, res) {
@@ -226,7 +244,9 @@ app.get("/previous-projects", async function (req, res) {
 });
 
 app.get("/gallery", async function (req, res) {
-  res.render("gallery");
+  const gallery = await Gallery.find({});
+  var errorMsg = req.flash("error")[0];
+  res.render("gallery", { gallery: gallery, errorMsg });
 });
 
 app.get("/careers", async (req, res) => {
@@ -269,6 +289,12 @@ app.get("/editHome", async function (req, res) {
   const homepage = await Homepage.findById({ _id: "6035e9c6871e8d1b201362ab" });
   var errorMsg = req.flash("error")[0];
   res.render("admin/editHome", { homepage: homepage, errorMsg });
+});
+
+app.get("/editGallery", async function (req, res) {
+  const gallery = await Gallery.find({});
+  var errorMsg = req.flash("error")[0];
+  res.render("admin/gallery", { gallery: gallery, errorMsg });
 });
 
 app.get("/addProject", function (req, res) {
@@ -333,11 +359,23 @@ app.get("/apartment/:id/", async function (req, res) {
   const [onebhkimg] = onebhk.map((src, index) => {
     return src.img;
   });
+  const [threebhkimgfp] = threebhk.map((src, index) => {
+    return src.fpimg;
+  });
+  const [twobhkimgfp] = twobhk.map((src, index) => {
+    return src.fpimg;
+  });
+  const [onebhkimgfp] = onebhk.map((src, index) => {
+    return src.fpimg;
+  });
   res.render("apartment-item/apartment", {
     singleApartment: singleApartment,
     threebhkimg: threebhkimg,
     twobhkimg: twobhkimg,
     onebhkimg: onebhkimg,
+    threebhkimgfp: threebhkimgfp,
+    twobhkimgfp: twobhkimgfp,
+    onebhkimgfp: onebhkimgfp,
   });
 });
 
@@ -366,11 +404,11 @@ app.post(
   upload.fields([
     {
       name: "banner1",
-      maxCount: 1,
+      maxCount: 3,
     },
     {
       name: "banner2",
-      maxCount: 1,
+      maxCount: 2,
     },
     {
       name: "section1image1",
@@ -387,11 +425,12 @@ app.post(
   ]),
   (req, res, next) => {
     var errorMsg = req.flash("error")[0];
-    const banner1 = req.files.banner1[0];
+    const banner1 = req.files.banner1;
     const banner2 = req.files.banner2[0];
     const section1image1 = req.files.section1image1[0];
     const section1image2 = req.files.section1image2[0];
     const thumbnail = req.files.thumbnail[0];
+    let banner1imgs = [];
 
     const sec1textheader = req.body.sec1textheader;
     const sec1texpara = req.body.sec1texpara;
@@ -399,8 +438,18 @@ app.post(
     const section2Text2 = req.body.section2Text2;
     const section2VideoLink = req.body.section2VideoLink;
 
+    if (banner1 !== undefined) {
+      banner1.map((src, index) => {
+        let finalImg = {
+          filename: req.files.banner1[index].filename,
+        };
+        let newUpload = new Image(finalImg);
+        banner1imgs.push(newUpload);
+      });
+    }
+
     const obj = {
-      banner1: banner1.filename,
+      banner1: [{ img: banner1imgs }],
       banner2: banner2.filename,
       section1image1: section1image1.filename,
       section1image2: section1image2.filename,
@@ -464,19 +513,19 @@ app.post(
     },
     {
       name: "threebhkfpimg1",
-      maxCount: 5,
+      maxCount: 1,
     },
     {
       name: "twobhkfpimg1",
-      maxCount: 5,
+      maxCount: 1,
     },
     {
       name: "onebhkfpimg1",
-      maxCount: 5,
+      maxCount: 1,
     },
     {
       name: "commercialfpimg1",
-      maxCount: 5,
+      maxCount: 1,
     },
     {
       name: "section2img",
@@ -760,6 +809,52 @@ app.post("/careerFrom", upload.single("resume"), async (req, res) => {
     } else {
       console.log(item);
       res.redirect("/careers");
+    }
+  });
+});
+
+app.post("/editGallery", upload.single("image"), async (req, res) => {
+  obj = {
+    image: req.file.filename,
+    text: req.body.text,
+  };
+  console.log(obj);
+  Gallery.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(item);
+      res.redirect("/editGallery");
+    }
+  });
+});
+
+app.post("/editGalleryImageText/:id", async (req, res) => {
+  const galleryId = req.params.id;
+  obj = {
+    text: req.body.text,
+  };
+  console.log(obj);
+  Gallery.findByIdAndUpdate({ _id: galleryId }, obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(item);
+      res.redirect("/editGallery");
+    }
+  });
+});
+
+app.post("/deleteGalleryImage", async function (req, res) {
+  Gallery.findByIdAndRemove({ _id: req.body.imageId }, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      if (err) {
+        res.json({ msg: "error" });
+      } else {
+        res.json({ msg: "success" });
+      }
     }
   });
 });
