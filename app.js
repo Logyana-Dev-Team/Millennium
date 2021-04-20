@@ -196,6 +196,15 @@ const gallerySchema = new mongoose.Schema(
 
 const Gallery = new mongoose.model("Gallery", gallerySchema);
 
+const departmentSchema = new mongoose.Schema(
+  {
+    department: String,
+  },
+  { timestamp: true }
+);
+
+const Department = new mongoose.model("Department", departmentSchema);
+
 passport.serializeUser(function (admin, done) {
   done(null, admin.id);
 });
@@ -256,7 +265,9 @@ app.get("/gallery", async function (req, res) {
 });
 
 app.get("/careers", async (req, res) => {
-  res.render("careers");
+  const departments = await Department.find({});
+  var errorMsg = req.flash("error")[0];
+  res.render("careers", { department: departments, errorMsg });
 });
 
 app.get("/contact-us", async function (req, res) {
@@ -353,8 +364,10 @@ app.get("/editSingleApartment/:id", async function (req, res) {
 app.get("/careerEnquiries", async (req, res) => {
   var errorMsg = req.flash("error")[0];
   const careerEnquiry = await Career.find({});
+  const departments = await Department.find({});
   res.render("admin/careerEnquiries", {
     careerEnquiry: careerEnquiry,
+    department: departments,
   });
 });
 
@@ -761,6 +774,35 @@ app.post("/editGalleryImageText/:id", async (req, res) => {
     } else {
       console.log(item);
       res.redirect("/editGallery");
+    }
+  });
+});
+
+app.post("/addDepartment", (req, res) => {
+  obj = {
+    department: req.body.department,
+  };
+  console.log(obj);
+  Department.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(item);
+      res.redirect("/careerEnquiries");
+    }
+  });
+});
+
+app.post("/removeDepartment", async function (req, res) {
+  Department.findByIdAndRemove({ _id: req.body.deptId }, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      if (err) {
+        res.json({ msg: "error" });
+      } else {
+        res.json({ msg: "success" });
+      }
     }
   });
 });

@@ -20,7 +20,6 @@ var Layout = (function () {
         $("body").removeClass("sidenav-pinned"),
         $("body").addClass("ready"),
         $("body").find(".sidenav-mask").remove(),
-        $(e.data("target")).removeClass("show"),
         localStorage.setItem("sidenav-state", "unpinned");
     }
     var a = localStorage.getItem("sidenav-state")

@@ -821,8 +821,15 @@
                                                                             Select
                                                                             Department
                                                                           </option>
-                                                                          <option></option></select
-                                                                      ></span>
+                                                                          <%department.forEach(department=>{%>
+                                                                          <option
+                                                                            value="<%= department.department %>"
+                                                                          >
+                                                                            <%=department.department%>
+                                                                          </option>
+                                                                          <%});%>
+                                                                        </select></span
+                                                                      >
                                                                     </div>
                                                                     <div
                                                                       class="qodef-grid-item qodef-col--6"

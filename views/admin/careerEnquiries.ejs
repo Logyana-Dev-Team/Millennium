@@ -26,11 +26,12 @@
     <!-- Page CSS -->
     <link
       rel="stylesheet"
-      href="../assets/libs/fullcalendar/dist/fullcalendar.min.css"
+      href="assets/libs/fullcalendar/dist/fullcalendar.min.css"
     />
     <!-- Purpose CSS -->
-    <link rel="stylesheet" href="../assets/css/purpose.css" id="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/style.css" id="stylesheet" />
+    <link rel="stylesheet" href="assets/css/theme.min.css" />
+    <link rel="stylesheet" href="assets/css/purpose.css" id="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" id="stylesheet" />
   </head>
 
   <body class="application application-offset">
@@ -40,7 +41,7 @@
     <!-- Application container -->
     <div class="container-fluid container-application">
       <!-- Sidenav -->
-      <div class="sidenav" id="sidenav-main" style="width: 25%">
+      <div class="sidenav show" id="sidenav-main">
         <!-- Sidenav header -->
         <div class="sidenav-header d-flex align-items-center">
           <a class="navbar-brand" href="/adminDashboard">
@@ -96,7 +97,10 @@
             <span class="btn-inner--icon d-block"
               ><img src="assets/img/icons/home.png" width="80%"
             /></span>
-            <span class="btn-inner--icon d-block pt-2">Edit Home Page</span>
+            <span class="btn-inner--icon d-block pt-2"
+              >Edit Home <br />
+              Page</span
+            >
           </a>
           <a href="/editProject" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
@@ -108,7 +112,10 @@
             <span class="btn-inner--icon d-block"
               ><img src="assets/img/icons/building (1).png" width="80%"
             /></span>
-            <span class="btn-inner--icon d-block pt-2">Completed Projects</span>
+            <span class="btn-inner--icon d-block pt-2"
+              >Completed <br />
+              Projects</span
+            >
           </a>
           <a href="/userTable" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
@@ -120,7 +127,10 @@
             <span class="btn-inner--icon d-block"
               ><img src="assets/img/icons/curriculum-vitae.png" width="80%"
             /></span>
-            <span class="btn-inner--icon d-block pt-2">Career Enquiries</span>
+            <span class="btn-inner--icon d-block pt-2"
+              >Career <br />
+              Enquiries</span
+            >
           </a>
           <a href="/editGallery" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
@@ -251,7 +261,7 @@
         <!-- Page content -->
         <div class="row"><h1 style="color: #fff">Career Enquiries</h1></div>
         <div class="card">
-          <div class="table-responsive" style="padding: 10px">
+          <div class="table-responsive" style="padding: 20px; width: 93%">
             <table
               id="dtBasicExample"
               class="table table-striped table-bordered table-sm"
@@ -289,27 +299,57 @@
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-        class="d-flex justify-content-center align-items-center"
-        style="min-height: 200px"
-      >
-        <div
-          class="toast"
-          id="userRemoved"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-header">
-            <strong class="mr-auto" style="color: red"
-              ><i class="fas fa-check"></i>&nbsp;Deleted</strong
-            >
+          <div class="row" style="margin: 20px">
+            <div class="col-6">
+              <form action="/addDepartment" method="POST">
+                <div class="form-group pb-2">
+                  <label class="inputLabel" for="Section1Text"
+                    >Add Departments :</label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="Section1Text"
+                    name="department"
+                    required
+                  /><small class="form-text text-muted"
+                    >Maximum 100 characters. No HTML or emoji allowed.</small
+                  >
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">
+                  <i class="czi-cloud-upload font-size-lg mr-2"></i>Add
+                  Department
+                </button>
+              </form>
+            </div>
+            <div class="col-6" style="text-align: -webkit-center">
+              <div class="table-responsive" style="width: max-content">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="table-divider">
+                      <th scope="col">Departments</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% department.forEach(department => {%>
+                    <tr class="table-divider">
+                      <td><%= department.department %></td>
+                      <td>
+                        <button
+                          onclick="removeDepartment('<%= department.id %>')"
+                          class="action-item text-danger"
+                        >
+                          <i class="far fa-trash-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <%}); %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div class="toast-body">User Deleted Successfully</div>
         </div>
       </div>
     </div>
@@ -323,9 +363,9 @@
     <script src="../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="js/dataTables.min.js" type="text/javascript"></script>
     <!-- Purpose JS -->
-    <script src="../assets/js/purpose.js"></script>
+    <script src="assets/js/purpose.js"></script>
     <!-- Demo JS - remove it when starting your project -->
-    <script src="../assets/js/demo.js"></script>
+    <script src="assets/js/demo.js"></script>
     <script>
       $(document).ready(function () {
         $("#dtBasicExample").DataTable();
@@ -344,6 +384,22 @@
               location.reload();
             }, 3000);
             $("#userRemoved").toast("show");
+          },
+          error: function (response) {
+            alert("server error occured");
+          },
+        });
+      }
+    </script>
+    <script>
+      function removeDepartment(deptId) {
+        $.ajax({
+          url: "/removeDepartment",
+          method: "post",
+          dataType: "json",
+          data: { deptId: deptId },
+          success: function (response) {
+            location.reload();
           },
           error: function (response) {
             alert("server error occured");
