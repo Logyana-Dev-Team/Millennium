@@ -101,10 +101,13 @@ const apartmentSchema = new mongoose.Schema(
     section1img1: String,
     section1img2: String,
     projName: String,
-    threebhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    twobhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    onebhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    commercial: [{ img: [imageSchema], fpimg: [imageSchema] }],
+    flatType: [
+      {
+        typeName: String,
+        img: [imageSchema],
+        fpimg: [imageSchema],
+      },
+    ],
     section2Text2: String,
     spot1: String,
     spot1info: String,
@@ -131,10 +134,13 @@ const prevApartmentSchema = new mongoose.Schema(
     section1img1: String,
     section1img2: String,
     projName: String,
-    threebhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    twobhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    onebhk: [{ img: [imageSchema], fpimg: [imageSchema] }],
-    commercial: [{ img: [imageSchema], fpimg: [imageSchema] }],
+    flatType: [
+      {
+        typeName: String,
+        img: [imageSchema],
+        fpimg: [imageSchema],
+      },
+    ],
     section2Text2: String,
     spot1: String,
     spot1info: String,
@@ -306,7 +312,7 @@ app.get("/editProject", async function (req, res) {
   const apartment = await Apartment.find({});
   const apartmentCount = apartment.length;
   let date = apartment.map((apartments) => {
-    return moment(apartments.createdAt).format("Do MMMM");
+    return moment(apartments.updatedAt).format("Do MMMM");
   });
   res.render("admin/editProject", {
     apartment: apartment,
@@ -319,7 +325,7 @@ app.get("/previousProjects", async function (req, res) {
   const apartment = await PrevApartment.find({});
   const apartmentCount = apartment.length;
   let date = apartment.map((apartments) => {
-    return moment(apartments.createdAt).format("Do MMMM");
+    return moment(apartments.updatedAt).format("Do MMMM");
   });
   res.render("admin/previousProjects", {
     apartment: apartment,
@@ -331,8 +337,15 @@ app.get("/previousProjects", async function (req, res) {
 app.get("/editSingleApartment/:id", async function (req, res) {
   var errorMsg = req.flash("error")[0];
   const singleApartment = await Apartment.findById(req.params.id, {});
+  console.log(singleApartment);
+  const flatType = singleApartment.flatType;
+  const [flatTypeimg] = flatType.map((src, index) => {
+    return src.img;
+  });
   res.render("admin/editSingleApartment", {
     singleApartment: singleApartment,
+    flatType: flatType,
+    flatTypeimg: flatTypeimg,
     errorMsg,
   });
 });
@@ -347,35 +360,35 @@ app.get("/careerEnquiries", async (req, res) => {
 
 app.get("/apartment/:id/", async function (req, res) {
   const singleApartment = await Apartment.findById(req.params.id, {});
-  const threebhk = singleApartment.threebhk;
-  const twobhk = singleApartment.twobhk;
-  const onebhk = singleApartment.onebhk;
-  const [threebhkimg] = threebhk.map((src, index) => {
+  const flatType = singleApartment.flatType;
+  const [flatTypeimg] = flatType.map((src, index) => {
     return src.img;
   });
-  const [twobhkimg] = twobhk.map((src, index) => {
-    return src.img;
-  });
-  const [onebhkimg] = onebhk.map((src, index) => {
-    return src.img;
-  });
-  const [threebhkimgfp] = threebhk.map((src, index) => {
-    return src.fpimg;
-  });
-  const [twobhkimgfp] = twobhk.map((src, index) => {
-    return src.fpimg;
-  });
-  const [onebhkimgfp] = onebhk.map((src, index) => {
+  const [flatTypeimgfp] = flatType.map((src, index) => {
     return src.fpimg;
   });
   res.render("apartment-item/apartment", {
     singleApartment: singleApartment,
-    threebhkimg: threebhkimg,
-    twobhkimg: twobhkimg,
-    onebhkimg: onebhkimg,
-    threebhkimgfp: threebhkimgfp,
-    twobhkimgfp: twobhkimgfp,
-    onebhkimgfp: onebhkimgfp,
+    flatType: flatType,
+    flatTypeimg: flatTypeimg,
+    flatTypeimgfp: flatTypeimgfp,
+  });
+});
+
+app.get("/prevApartment/:id/", async function (req, res) {
+  const singleApartment = await PrevApartment.findById(req.params.id, {});
+  const flatType = singleApartment.flatType;
+  const [flatTypeimg] = flatType.map((src, index) => {
+    return src.img;
+  });
+  const [flatTypeimgfp] = flatType.map((src, index) => {
+    return src.fpimg;
+  });
+  res.render("apartment-item/apartment", {
+    singleApartment: singleApartment,
+    flatType: flatType,
+    flatTypeimg: flatTypeimg,
+    flatTypeimgfp: flatTypeimgfp,
   });
 });
 
@@ -496,38 +509,6 @@ app.post(
       maxCount: 1,
     },
     {
-      name: "threebhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "twobhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "onebhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "commercialimgs",
-      maxCount: 5,
-    },
-    {
-      name: "threebhkfpimg1",
-      maxCount: 1,
-    },
-    {
-      name: "twobhkfpimg1",
-      maxCount: 1,
-    },
-    {
-      name: "onebhkfpimg1",
-      maxCount: 1,
-    },
-    {
-      name: "commercialfpimg1",
-      maxCount: 1,
-    },
-    {
       name: "section2img",
       maxCount: 1,
     },
@@ -550,96 +531,7 @@ app.post(
     const pdf = req.files.pdf[0].filename;
     const section1img1 = req.files.section1img1[0].filename;
     const section1img2 = req.files.section1img2[0].filename;
-    const threebhkimgs = req.files.threebhkimgs;
-    const twobhkimgs = req.files.twobhkimgs;
-    const onebhkimgs = req.files.onebhkimgs;
-    const commercialimgs = req.files.commercialimgs;
-    const threebhkfpimg1 = req.files.threebhkfpimg1;
-    const twobhkfpimg1 = req.files.twobhkfpimg1;
-    const onebhkfpimg1 = req.files.onebhkfpimg1;
-    const commercialfpimg1 = req.files.commercialfpimg1;
     const section2img = req.files.section2img[0].filename;
-    let threebhkimg = [];
-    let twobhkimg = [];
-    let onebhkimg = [];
-    let commercialimg = [];
-    let threebhkfpimg = [];
-    let twobhkfpimg = [];
-    let onebhkfpimg = [];
-    let commercialfpimg = [];
-
-    if (threebhkimgs !== undefined) {
-      threebhkimgs.map((src, index) => {
-        let finalImg = {
-          filename: req.files.threebhkimgs[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        threebhkimg.push(newUpload);
-      });
-    }
-    if (twobhkimgs !== undefined) {
-      twobhkimgs.map((src, index) => {
-        let finalImg = {
-          filename: req.files.twobhkimgs[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        twobhkimg.push(newUpload);
-      });
-    }
-    if (onebhkimgs !== undefined) {
-      onebhkimgs.map((src, index) => {
-        let finalImg = {
-          filename: req.files.onebhkimgs[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        onebhkimg.push(newUpload);
-      });
-    }
-    if (commercialimgs !== undefined) {
-      commercialimgs.map((src, index) => {
-        let finalImg = {
-          filename: req.files.commercialimgs[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        commercialimg.push(newUpload);
-      });
-    }
-    if (threebhkfpimg1 !== undefined) {
-      threebhkfpimg1.map((src, index) => {
-        let finalImg = {
-          filename: req.files.threebhkfpimg1[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        threebhkfpimg.push(newUpload);
-      });
-    }
-    if (twobhkfpimg1 !== undefined) {
-      twobhkfpimg1.map((src, index) => {
-        let finalImg = {
-          filename: req.files.twobhkfpimg1[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        twobhkfpimg.push(newUpload);
-      });
-    }
-    if (onebhkfpimg1 !== undefined) {
-      onebhkfpimg1.map((src, index) => {
-        let finalImg = {
-          filename: req.files.onebhkfpimg1[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        onebhkfpimg.push(newUpload);
-      });
-    }
-    if (commercialfpimg1 !== undefined) {
-      commercialfpimg1.map((src, index) => {
-        let finalImg = {
-          filename: req.files.commercialfpimg1[index].filename,
-        };
-        let newUpload = new Image(finalImg);
-        commercialfpimg.push(newUpload);
-      });
-    }
 
     obj = {
       banner1: banner1,
@@ -649,10 +541,6 @@ app.post(
       section1para: section1para,
       section1img1: section1img1,
       section1img2: section1img2,
-      threebhk: [{ img: threebhkimg, fpimg: threebhkfpimg }],
-      twobhk: [{ img: twobhkimg, fpimg: twobhkfpimg }],
-      onebhk: [{ img: onebhkimg, fpimg: onebhkfpimg }],
-      commercial: [{ img: commercialimg, fpimg: commercialfpimg }],
       projName: projName,
       section2Text2: section2Text2,
       spot1: spot1,
@@ -679,6 +567,70 @@ app.post(
 );
 
 app.post(
+  "/addTypes/:id",
+  upload.fields([
+    {
+      name: "flatImages",
+      maxCount: 5,
+    },
+    {
+      name: "flatFloorPlanimg",
+      maxCount: 5,
+    },
+  ]),
+  async (req, res) => {
+    const flatTypeName = req.body.flatTypeName;
+    const flatImages = req.files.flatImages;
+    const flatFloorPlanimg = req.files.flatFloorPlanimg;
+    let flatImage = [];
+    let flatFloorPlanImage = [];
+
+    if (flatImages !== undefined) {
+      flatImages.map((src, index) => {
+        let finalImg = {
+          filename: req.files.flatImages[index].filename,
+        };
+        let newUpload = new Image(finalImg);
+        flatImage.push(newUpload);
+      });
+    }
+    if (flatFloorPlanimg !== undefined) {
+      flatFloorPlanimg.map((src, index) => {
+        let finalImg = {
+          filename: req.files.flatFloorPlanimg[index].filename,
+        };
+        let newUpload = new Image(finalImg);
+        flatFloorPlanImage.push(newUpload);
+      });
+    }
+
+    console.log(flatTypeName);
+    console.log(flatImage);
+    console.log(flatFloorPlanImage);
+
+    const obj = {
+      typeName: flatTypeName,
+      img: flatImage,
+      fpimg: flatFloorPlanImage,
+    };
+
+    Apartment.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $addToSet: { flatType: obj } },
+      { upsert: true },
+      (err, item) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(item);
+          res.redirect(req.get("referer"));
+        }
+      }
+    );
+  }
+);
+
+app.post(
   "/editSingleApartment/:id",
   upload.fields([
     {
@@ -696,38 +648,6 @@ app.post(
     {
       name: "section1img2",
       maxCount: 1,
-    },
-    {
-      name: "threebhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "twobhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "onebhkimgs",
-      maxCount: 5,
-    },
-    {
-      name: "commercialimgs",
-      maxCount: 5,
-    },
-    {
-      name: "threebhkfpimg1",
-      maxCount: 5,
-    },
-    {
-      name: "twobhkfpimg1",
-      maxCount: 5,
-    },
-    {
-      name: "onebhkfpimg1",
-      maxCount: 5,
-    },
-    {
-      name: "commercialfpimg1",
-      maxCount: 5,
     },
     {
       name: "section2img",
@@ -901,6 +821,24 @@ app.post("/removeUser", async function (req, res) {
   });
 });
 
+app.post("/removeFlatType", async (req, res) => {
+  Apartment.findByIdAndUpdate(
+    { _id: req.body.apartId },
+    { $pull: { flatType: { _id: req.body.typeId } } },
+    (err, item) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (err) {
+          res.json({ msg: "error" });
+        } else {
+          res.json({ msg: "success" });
+        }
+      }
+    }
+  );
+});
+
 app.post("/moveToPrevious", async function (req, res) {
   const apartId = req.body.apartId;
   const apartment = await Apartment.findById({ _id: req.body.apartId }, {});
@@ -912,10 +850,7 @@ app.post("/moveToPrevious", async function (req, res) {
     section1para: apartment.section1para,
     section1img1: apartment.section1img1,
     section1img2: apartment.section1img2,
-    threebhk: apartment.threebhk,
-    twobhk: apartment.twobhk,
-    onebhk: apartment.onebhk,
-    commercial: apartment.commercial,
+    flatType: apartment.flatType,
     projName: apartment.projName,
     section2Text2: apartment.section2Text2,
     spot1: apartment.spot1,

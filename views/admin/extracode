@@ -1,0 +1,396 @@
+<label for="apartTypeCheck" class="inputLabel"
+                >Select apartment type you want to add</label
+              >
+              <div class="custom-control custom-checkbox" id="apartTypeCheck">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="3bhk"
+                  name="3bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="3bhk">3BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="2bhk"
+                  name="2bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="2bhk">2BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="1bhk"
+                  name="1bhk"
+                  value="1"
+                />
+                <label class="custom-control-label" for="1bhk">1BHK</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="commercial"
+                  name="commercial"
+                  value="1"
+                />
+                <label class="custom-control-label" for="commercial"
+                  >Commercial</label
+                >
+              </div>
+              <small class="form-text text-muted" style="margin-bottom: 1.25rem"
+                >Select <span style="color: #6e00ff">only</span> types of
+                apartments you want to enter.</small
+              >
+              <div
+                id="formfor3bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">3BHK</h3>
+
+                <label for="3bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 3BHK</label
+                >
+                <div class="row" id="3bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="threebhkimgs"
+                        id="file-5"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-5">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan image for 3BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="threebhkfpimg1"
+                        id="file-6"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                      />
+                      <label for="file-6">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold"
+                          >single</span
+                        >
+                        image of floor-plan for 3BHK & the resolution of the
+                        image should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >850px x 568px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="formfor2bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">2BHK</h3>
+
+                <label for="2bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 2BHK</label
+                >
+                <div class="row" id="2bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="twobhkimgs"
+                        id="file-7"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-7">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for 2BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="twobhkfpimg1"
+                        id="file-8"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                      />
+                      <label for="file-8">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold"
+                          >single</span
+                        >
+                        image of floor-plan for 2BHK & the resolution of the
+                        image should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >850px x 568px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="formfor1bhk"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">1BHK</h3>
+
+                <label for="1bhkimg" class="inputLabel" style="margin: 10px"
+                  >Add images for 1BHK</label
+                >
+                <div class="row" id="1bhkimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="onebhkimgs"
+                        id="file-9"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-9">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for 1BHK</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="onebhkfpimg1"
+                        id="file-10"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                      />
+                      <label for="file-10">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold"
+                          >single</span
+                        >
+                        image of floor-plan for 1BHK & the resolution of the
+                        image should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >850px x 568px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="formforcommericial"
+                style="
+                  transition: border-color 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                  border: 2px dashed #dae1e7;
+                  background-color: #fff;
+                  margin-bottom: 1rem;
+                  margin-top: 2.5rem;
+                  text-align: center;
+                "
+              >
+                <h3 style="font-weight: bold">Commercial</h3>
+
+                <label
+                  for="commercialimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add images for Commercial</label
+                >
+                <div class="row" id="Commercialimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="commercialimgs"
+                        id="file-11"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                        multiple
+                      />
+                      <label for="file-11">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold">5</span>
+                        images & the resolutions of the images should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >800px x 530px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+                <label
+                  for="floorplanimg"
+                  class="inputLabel"
+                  style="margin: 10px"
+                  >Add Floor Plan images for Commercial</label
+                >
+                <div class="row" id="floorplanimg" style="margin: 0">
+                  <div
+                    class="col"
+                    style="margin-bottom: 1rem; margin-top: 1rem"
+                  >
+                    <div class="mb-3">
+                      <input
+                        type="file"
+                        name="commercialfpimg1"
+                        id="file-12"
+                        class="custom-input-file"
+                        data-multiple-caption="{count} files selected"
+                      />
+                      <label for="file-12">
+                        <i class="fa fa-upload"></i>
+                        <span>Choose a file…</span>
+                      </label>
+                      <small class="form-text text-muted"
+                        >Upload
+                        <span style="color: #6e00ff; font-weight: bold"
+                          >single</span
+                        >
+                        image of floor-plan for commercials & the resolution of
+                        the image should be
+                        <span style="font-weight: bold; color: #6e00ff"
+                          >850px x 568px</span
+                        >
+                        for better resolution.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>

@@ -30,21 +30,6 @@
       title="Hendon &raquo; Comments Feed"
       href="../comments/feed/index.html"
     />
-
-    <style type="text/css">
-      img.wp-smiley,
-      img.emoji {
-        display: inline !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 1em !important;
-        width: 1em !important;
-        margin: 0 0.07em !important;
-        vertical-align: -0.1em !important;
-        background: none !important;
-        padding: 0 !important;
-      }
-    </style>
     <link
       rel="stylesheet"
       href="../wp-content/cache/minify/724af.css"
@@ -74,10 +59,6 @@
       href="../wp-content/cache/minify/edd85.css"
       media="all"
     />
-    <style id="rs-plugin-settings-inline-css" type="text/css">
-      #rs-demo-id {
-      }
-    </style>
     <link
       rel="stylesheet"
       href="../wp-content/cache/minify/7cd2d.css"
@@ -165,17 +146,6 @@
       media="all"
     />
     <script src="../wp-content/cache/minify/df983.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var sb_instagram_js_options = {
-        font_method: "svg",
-        resized_url:
-          "https:\/\/hendon.qodeinteractive.com\/wp-content\/uploads\/sb-instagram-feed-images\/",
-        placeholder:
-          "https:\/\/hendon.qodeinteractive.com\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png",
-      };
-      /* ]]> */
-    </script>
     <script src="../wp-content/cache/minify/d0cd8.js"></script>
     <link rel="https://api.w.org/" href="../wp-json/index.html" />
     <link
@@ -203,41 +173,6 @@
       type="text/xml+oembed"
       href="../wp-json/oembed/1.0/embed569d?url=https%3A%2F%2Fhendon.qodeinteractive.com%2Ffeature-bellow%2F&amp;format=xml"
     />
-
-    <script data-cfasync="false" data-pagespeed-no-defer>
-      //<![CDATA[
-      var dataLayer_content = {
-        pagePostType: "page",
-        pagePostType2: "single-page",
-        pagePostAuthor: "admin",
-      };
-      dataLayer.push(dataLayer_content); //]]>
-    </script>
-    <script data-cfasync="false">
-      //<![CDATA[
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "//www.googletagmanager.com/gtm." + "js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-KTQ2BTD"); //]]>
-    </script>
-
-    <noscript
-      ><style>
-        .woocommerce-product-gallery {
-          opacity: 1 !important;
-        }
-      </style></noscript
-    >
-    <meta
-      name="generator"
-      content="Powered by Slider Revolution 6.2.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."
-    />
     <link
       rel="icon"
       href="../wp-content/uploads/2020/07/cropped-Favikon-32x32.png"
@@ -256,77 +191,6 @@
       name="msapplication-TileImage"
       content="https://hendon.qodeinteractive.com/wp-content/uploads/2020/07/cropped-Favikon-270x270.png"
     />
-    <script type="text/javascript">
-      function setREVStartSize(e) {
-        try {
-          var pw = document.getElementById(e.c).parentNode.offsetWidth,
-            newh;
-          pw = pw === 0 || isNaN(pw) ? window.innerWidth : pw;
-          e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
-          e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
-          e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
-          e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
-          e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
-          e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
-          e.mh =
-            e.mh === undefined || e.mh == "" || e.mh === "auto"
-              ? 0
-              : parseInt(e.mh, 0);
-          if (e.layout === "fullscreen" || e.l === "fullscreen")
-            newh = Math.max(e.mh, window.innerHeight);
-          else {
-            e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-            for (var i in e.rl)
-              if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
-            e.gh =
-              e.el === undefined ||
-              e.el === "" ||
-              (Array.isArray(e.el) && e.el.length == 0)
-                ? e.gh
-                : e.el;
-            e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-            for (var i in e.rl)
-              if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
-
-            var nl = new Array(e.rl.length),
-              ix = 0,
-              sl;
-            e.tabw = e.tabhide >= pw ? 0 : e.tabw;
-            e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
-            e.tabh = e.tabhide >= pw ? 0 : e.tabh;
-            e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
-            for (var i in e.rl)
-              nl[i] = e.rl[i] < window.innerWidth ? 0 : e.rl[i];
-            sl = nl[0];
-            for (var i in nl)
-              if (sl > nl[i] && nl[i] > 0) {
-                sl = nl[i];
-                ix = i;
-              }
-            var m =
-              pw > e.gw[ix] + e.tabw + e.thumbw
-                ? 1
-                : (pw - (e.tabw + e.thumbw)) / e.gw[ix];
-
-            newh =
-              (e.type === "carousel" && e.justify === "true"
-                ? e.gh[ix]
-                : e.gh[ix] * m) +
-              (e.tabh + e.thumbh);
-          }
-
-          if (window.rs_init_css === undefined)
-            window.rs_init_css = document.head.appendChild(
-              document.createElement("style")
-            );
-          document.getElementById(e.c).height = newh;
-          window.rs_init_css.innerHTML +=
-            "#" + e.c + "_wrapper { height: " + newh + "px }";
-        } catch (e) {
-          console.log("Failure at Presize of Slider:" + e);
-        }
-      }
-    </script>
     <style type="text/css" id="wp-custom-css">
       @media (min-width: 1025px) {
         .page-id-882 #qodef-page-header {
@@ -420,7 +284,7 @@
               <ul id="menu-divided-menu-left" class="menu">
                 <li
                   id="menu-item-25"
-                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25 qodef-menu-item--narrow"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1989 qodef-menu-item--narrow"
                 >
                   <a href="/"
                     ><span class="qodef-menu-item-text">Home</span
@@ -474,7 +338,7 @@
                 </li>
                 <li
                   id="menu-item-1989"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1989 qodef-menu-item--narrow"
+                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25 qodef-menu-item--narrow"
                 >
                   <a href="/projects"
                     ><span class="qodef-menu-item-text">Ongoing Projects</span
@@ -899,7 +763,7 @@
                         <span style="color: #d7926b">Address</span>:
                         <a
                           style="display: inline-block; padding-bottom: 10px"
-                          href="https://www.google.com/maps/place/Seestrasse+21,+8002+Zürich,+Switzerland/@47.363765,8.529405,17z/data=!3m1!4b1!4m5!3m4!1s0x479009f9149bc8ab:0x80b507c3ea8d2191!8m2!3d47.363765!4d8.5315937"
+                          href="https://www.google.com/maps/place/Millennium+Developers/@18.5960166,73.7786026,15.96z/data=!4m12!1m6!3m5!1s0x3bc2b9177b5b4d29:0xdda7aaece1d976e!2sMillennium+Developers!8m2!3d18.5960199!4d73.7826736!3m4!1s0x0:0xdb0b86957ead1318!8m2!3d18.5994994!4d73.780835"
                           target="_blank"
                           rel="noopener noreferrer"
                           >Millennium Developers, Metro 9 Building, First floor,

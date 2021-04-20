@@ -39,7 +39,7 @@
     <!-- Application container -->
     <div class="container-fluid container-application">
       <!-- Sidenav -->
-      <div class="sidenav" id="sidenav-main">
+      <div class="sidenav" id="sidenav-main" style="width: 25%">
         <!-- Sidenav header -->
         <div class="sidenav-header d-flex align-items-center">
           <a class="navbar-brand" href="/adminDashboard">
@@ -111,13 +111,13 @@
           </a>
           <a href="/careerEnquiries" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
-              ><img src="assets/img/icons/curriculum-vitae.png" width="80%"
+              ><img src="/assets/img/icons/curriculum-vitae.png" width="80%"
             /></span>
             <span class="btn-inner--icon d-block pt-2">Career Enquiries</span>
           </a>
           <a href="/editGallery" class="btn btn-square text-sm">
             <span class="btn-inner--icon d-block"
-              ><img src="assets/img/icons/image-gallery.png" width="80%"
+              ><img src="/assets/img/icons/image-gallery.png" width="80%"
             /></span>
             <span class="btn-inner--icon d-block pt-2">Edit Gallery</span>
           </a>
@@ -255,19 +255,229 @@
           <div id="flash-msg" class="alert alert-danger"><%=errorMsg %></div>
           <%}%>
           <div
+            class="row"
             style="
               text-align: center;
               color: #6e00ff !important ;
               margin-top: 35px;
             "
           >
-            <p style="color: #363435; font-size: 20px">
-              Edit the page text for Project :
-              <span style="font-weight: bold; color: #6e00ff"
-                ><%= singleApartment.projName %></span
+            <div class="col-8">
+              <p style="color: #363435; font-size: 20px">
+                Edit the page text for Project :
+                <span style="font-weight: bold; color: #6e00ff"
+                  ><%= singleApartment.projName %></span
+                >
+              </p>
+            </div>
+            <div class="col-4">
+              <button
+                type="button"
+                class="btn btn-info rounded-pill"
+                style="margin-bottom: 1rem"
+                data-toggle="modal"
+                data-target=".docs-example-modal-lg"
               >
-            </p>
+                <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                <span class="btn-inner--text">&nbsp;Add Flat Types</span>
+              </button>
+            </div>
+
+            <div
+              class="modal fade docs-example-modal-lg"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myLargeModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title h6" id="myLargeModalLabel">
+                      Add Flat Types
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form
+                    action="/addTypes/<%= singleApartment.id %>"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <div class="modal-body">
+                      <select
+                        class="custom-select"
+                        name="flatTypeName"
+                        id="selectType"
+                      >
+                        <option selected>Select Flat Type</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="1.5BHK">1.5BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="2.5BHK">2.5BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="1RK">1RK</option>
+                        <option value="Shop">Shop</option>
+                        <option value="Office">Office</option>
+                        <option value="Mezzanine">Mezzanine</option>
+                        <option value="Showroom">Showroom</option>
+                      </select>
+                      <div
+                        id="formfor3bhk"
+                        style="
+                          transition: border-color 0.2s ease-in-out,
+                            box-shadow 0.2s ease-in-out;
+                          border: 2px dashed #dae1e7;
+                          background-color: #fff;
+                          margin-bottom: 1rem;
+                          margin-top: 2.5rem;
+                          text-align: center;
+                        "
+                      >
+                        <h3 style="font-weight: bold">
+                          <span class="flatTypeName"></span>
+                        </h3>
+
+                        <label
+                          for="3bhkimg"
+                          class="inputLabel"
+                          style="margin: 10px"
+                          >Add images for <span class="flatTypeName"></span
+                        ></label>
+                        <div class="row" id="3bhkimg" style="margin: 0">
+                          <div
+                            class="col"
+                            style="margin-bottom: 1rem; margin-top: 1rem"
+                          >
+                            <div class="mb-3">
+                              <input
+                                type="file"
+                                name="flatImages"
+                                id="file-5"
+                                class="custom-input-file"
+                                data-multiple-caption="{count} files selected"
+                                multiple
+                              />
+                              <label for="file-5">
+                                <i class="fa fa-upload"></i>
+                                <span>Choose a file…</span>
+                              </label>
+                              <small class="form-text text-muted"
+                                >Upload
+                                <span style="color: #6e00ff; font-weight: bold"
+                                  >5</span
+                                >
+                                images & the resolutions of the images should be
+                                <span style="font-weight: bold; color: #6e00ff"
+                                  >800px x 530px</span
+                                >
+                                for better resolution.</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <label
+                          for="floorplanimg"
+                          class="inputLabel"
+                          style="margin: 10px"
+                          >Add Floor Plan image for
+                          <span class="flatTypeName"></span
+                        ></label>
+                        <div class="row" id="floorplanimg" style="margin: 0">
+                          <div
+                            class="col"
+                            style="margin-bottom: 1rem; margin-top: 1rem"
+                          >
+                            <div class="mb-3">
+                              <input
+                                type="file"
+                                name="flatFloorPlanimg"
+                                id="file-6"
+                                class="custom-input-file"
+                                data-multiple-caption="{count} files selected"
+                              />
+                              <label for="file-6">
+                                <i class="fa fa-upload"></i>
+                                <span>Choose a file…</span>
+                              </label>
+                              <small class="form-text text-muted"
+                                >Upload
+                                <span style="color: #6e00ff; font-weight: bold"
+                                  >single</span
+                                >
+                                image of floor-plan for
+                                <span class="flatTypeName"></span> & the
+                                resolution of the image should be
+                                <span style="font-weight: bold; color: #6e00ff"
+                                  >850px x 568px</span
+                                >
+                                for better resolution.</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Add Type
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+          <div style="margin: auto 55px">
+            <label class="inputLabel" for="ftypes">Types Added :</label>
+            <div class="row" id="ftypes">
+              <% flatType.forEach(type => { %>
+              <div class="col-2">
+                <div class="card card-fluid">
+                  <div class="card-body text-center" style="padding: 5px">
+                    <button
+                      type="button"
+                      onclick="removeFlatType('<%= type.id %>','<%= singleApartment.id %>')"
+                      class="btn btn-xs btn-danger rounded-circle btn-icon-only"
+                      style="
+                        position: absolute;
+                        z-index: 1;
+                        right: 0;
+                        top: 0;
+                        margin: 0;
+                      "
+                    >
+                      <span style="font-size: 22px">&times;</span>
+                    </button>
+                    <div class="avatar-parent-child">
+                      <img
+                        alt="Image placeholder"
+                        src="/assets/img/uploads/<%= flatTypeimg[0].filename %>"
+                      />
+                    </div>
+                    <span style="color: grey; font-size: 15px; font-weight: 600"
+                      ><%= type.typeName %></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+
           <!-- Omnisearch -->
           <div style="margin: 0 auto; width: 90%">
             <form
@@ -276,6 +486,7 @@
               enctype="multipart/form-data"
             >
               <div class="mb-3">
+                <label class="inputLabel">Image for Banner 1:</label>
                 <input
                   type="file"
                   name="banner1"
@@ -289,6 +500,13 @@
                   <i class="fa fa-upload"></i>
                   <span>Choose a file…</span>
                 </label>
+                <small class="form-text text-muted"
+                  >Image resolution should be
+                  <span style="font-weight: bold; color: #6e00ff"
+                    >1920px x 1100px</span
+                  >
+                  for better resolution.</small
+                >
               </div>
               <div class="form-group pb-2">
                 <label class="inputLabel" for="bannerText">Banner Text :</label>
@@ -317,6 +535,11 @@
                   <i class="fa fa-upload"></i>
                   <span>Choose a file…</span>
                 </label>
+                <small class="form-text text-muted"
+                  >Upload
+                  <span style="color: #6e00ff; font-weight: bold">PDF</span> of
+                  floorplan of the apartment.</small
+                >
               </div>
               <div class="form-group pb-2">
                 <label class="inputLabel" for="section1Header"
@@ -349,6 +572,7 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
+                    <label class="inputLabel">Image 1 for Section 1 :</label>
                     <input
                       type="file"
                       name="section1img1"
@@ -362,10 +586,18 @@
                       <i class="fa fa-upload"></i>
                       <span>Choose a file…</span>
                     </label>
+                    <small class="form-text text-muted"
+                      >Image resolution should be
+                      <span style="font-weight: bold; color: #6e00ff"
+                        >530px x 620px</span
+                      >
+                      for better resolution.</small
+                    >
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
+                    <label class="inputLabel">Image 2 for Section 1 :</label>
                     <input
                       type="file"
                       name="section1img2"
@@ -379,6 +611,13 @@
                       <i class="fa fa-upload"></i>
                       <span>Choose a file…</span>
                     </label>
+                    <small class="form-text text-muted"
+                      >Image resolution should be
+                      <span style="font-weight: bold; color: #6e00ff"
+                        >433px x 536px</span
+                      >
+                      for better resolution.</small
+                    >
                   </div>
                 </div>
               </div>
@@ -411,6 +650,15 @@
               <label class="inputLabel" for="unp-product-tags"
                 >Enter info abut nearby spots :</label
               >
+              <div class="alert alert-success" role="alert">
+                Enter Information about nearby locations. You can also change
+                the locations types given below.
+                <br /><br />
+                <small style="font-weight: bold"
+                  >Note: Given location types are only for example purpose you
+                  can change it according to your preference.</small
+                >
+              </div>
               <div class="row">
                 <div class="col-6">
                   <div class="form-group py-2">
@@ -527,7 +775,11 @@
                   <span>Choose a file…</span>
                 </label>
                 <small class="form-text text-muted"
-                  >1000 x 800px ideal size for hi-res displays</small
+                  >Image resolution should be
+                  <span style="font-weight: bold; color: #6e00ff"
+                    >650px x 525px</span
+                  >
+                  for better resolution.</small
                 >
               </div>
               <button class="btn btn-primary btn-block" type="submit">
@@ -547,8 +799,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
     <script src="../assets/js/purpose.js"></script>
     <script src="../assets/js/demo.js"></script>
-    <script src="js/theme.min.js"></script>
-    .
+    <script src="/js/theme.min.js"></script>
+    <script>
+      const select = document.getElementById("selectType");
+
+      select.onchange = function () {
+        var selectedString = select.options[select.selectedIndex].value;
+        console.log(selectedString);
+        var type = (document.getElementsByClassName(
+          "flatTypeName"
+        )[0].innerHTML = selectedString);
+        var type = (document.getElementsByClassName(
+          "flatTypeName"
+        )[1].innerHTML = selectedString);
+        var type = (document.getElementsByClassName(
+          "flatTypeName"
+        )[2].innerHTML = selectedString);
+        var type = (document.getElementsByClassName(
+          "flatTypeName"
+        )[3].innerHTML = selectedString);
+      };
+    </script>
+    <script>
+      function removeFlatType(typeId, apartId) {
+        $.ajax({
+          url: "/removeFlatType",
+          method: "post",
+          dataType: "json",
+          data: { typeId: typeId, apartId: apartId },
+          success: function (response) {
+            location.reload();
+          },
+          error: function (response) {
+            alert("server error occured");
+          },
+        });
+      }
+    </script>
     <!-- <script src="js/multipleImages.js"></script> -->
   </body>
 </html>

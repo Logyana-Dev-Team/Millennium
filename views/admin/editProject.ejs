@@ -45,7 +45,7 @@
     <!-- Application container -->
     <div class="container-fluid container-application">
       <!-- Sidenav -->
-      <div class="sidenav" id="sidenav-main">
+      <div class="sidenav" id="sidenav-main" style="width: 25%">
         <!-- Sidenav header -->
         <div class="sidenav-header d-flex align-items-center">
           <a class="navbar-brand" href="/adminDashboard">
@@ -498,16 +498,29 @@
           <!-- Project cards -->
           <div class="row">
             <% apartment.forEach((apartments,index) => {%>
-            <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="col-xl-6 col-lg-4 col-sm-6">
               <div class="card hover-shadow-lg">
                 <div class="card-header border-0 pb-0">
-                  <div class="">
-                    <h4 class="">
-                      <a href="#" style="color: #6e00ff"
-                        ><%= apartments.projName %></a
+                  <div class="row">
+                    <div class="col-8">
+                      <h4>
+                        <a href="#" style="color: #6e00ff"
+                          ><%= apartments.projName %></a
+                        >
+                      </h4>
+                    </div>
+                    <div class="col-4">
+                      <a
+                        href="/editSingleApartment/<%= apartments.id %>"
+                        class="btn btn-xs btn-primary btn-icon rounded-pill"
+                        style="float: right"
                       >
-                    </h4>
-                    <div class="text-right"></div>
+                        <span class="btn-inner--icon"
+                          ><i class="far fa-edit"></i
+                        ></span>
+                        <span class="btn-inner--text">Edit</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div class="card-body text-center">
@@ -530,29 +543,42 @@
                       ></span
                     >
                   </div>
+                  <div style="padding-top: 10px; padding-bottom: 5px">
+                    <span
+                      >Flat Types : <% apartments.flatType.forEach(typeName=>{
+                      %>
+                      <span style="font-weight: 600"
+                        ><%= typeName.typeName %>,&nbsp;</span
+                      ></span
+                    >
+                    <% }); %>
+                  </div>
                   <span class="clearfix"></span>
                 </div>
                 <div class="card-footer">
-                  <div class="actions d-flex justify-content-between">
-                    <a
-                      href="/editSingleApartment/<%= apartments.id %>"
-                      class="action-item"
-                    >
-                      <i class="far fa-edit"></i>
-                    </a>
-                    <span
-                      onclick="moveToPrevious('<%= apartments.id %>')"
-                      class="badge badge-soft-primary"
-                      style="padding: 10px; color: #6e00ff; cursor: pointer"
-                    >
-                      Move to Completed
-                    </span>
-                    <button
-                      onclick="deleteProject('<%= apartments.id %>')"
-                      class="action-item text-danger"
-                    >
-                      <i class="far fa-trash-alt"></i>
-                    </button>
+                  <div class="row">
+                    <div class="col-auto">
+                      <button
+                        onclick="moveToPrevious('<%= apartments.id %>')"
+                        class="btn btn-xs btn-secondary btn-icon rounded-pill"
+                      >
+                        <span class="btn-inner--icon"
+                          ><i class="fas fa-sign-out-alt"></i>
+                        </span>
+                        <span class="btn-inner--text">Move to Completed</span>
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <button
+                        onclick="deleteProject('<%= apartments.id %>')"
+                        class="btn btn-xs btn-danger btn-icon rounded-pill"
+                      >
+                        <span class="btn-inner--icon"
+                          ><i class="far fa-trash-alt"></i>
+                        </span>
+                        <span class="btn-inner--text">Delete</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

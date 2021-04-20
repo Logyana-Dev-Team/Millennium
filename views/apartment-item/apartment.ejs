@@ -36,20 +36,6 @@
       title="Hendon &raquo; West Complex Comments Feed"
       href="feed/index.html"
     />
-    <style type="text/css">
-      img.wp-smiley,
-      img.emoji {
-        display: inline !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 1em !important;
-        width: 1em !important;
-        margin: 0 0.07em !important;
-        vertical-align: -0.1em !important;
-        background: none !important;
-        padding: 0 !important;
-      }
-    </style>
     <link
       rel="stylesheet"
       href="/wp-content/cache/minify/724af.css"
@@ -72,20 +58,11 @@
       href="/wp-content/cache/minify/edd85.css"
       media="all"
     />
-    <style id="rs-plugin-settings-inline-css" type="text/css">
-      #rs-demo-id {
-      }
-    </style>
     <link
       rel="stylesheet"
       href="/wp-content/cache/minify/7cd2d.css"
       media="all"
     />
-    <style id="woocommerce-inline-inline-css" type="text/css">
-      .woocommerce form .form-row .required {
-        visibility: visible;
-      }
-    </style>
     <link
       rel="stylesheet"
       href="/wp-content/cache/minify/60cbd.css"
@@ -110,17 +87,6 @@
       media="all"
     />
     <script src="/wp-content/cache/minify/df983.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var sb_instagram_js_options = {
-        font_method: "svg",
-        resized_url:
-          "https:\/\/hendon.qodeinteractive.com\/wp-content\/uploads\/sb-instagram-feed-images\/",
-        placeholder:
-          "https:\/\/hendon.qodeinteractive.com\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png",
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/d0cd8.js"></script>
     <link rel="https://api.w.org/" href="/wp-json/index.html" />
     <link
@@ -153,41 +119,6 @@
       rel="alternate"
       type="text/xml+oembed"
       href="../../wp-json/oembed/1.0/embed5031?url=https%3A%2F%2Fhendon.qodeinteractive.com%2Fapartment-item%2Fwest-complex%2F&amp;format=xml"
-    />
-
-    <script data-cfasync="false" data-pagespeed-no-defer>
-      //<![CDATA[
-      var dataLayer_content = {
-        pagePostType: "apartment-item",
-        pagePostType2: "single-apartment-item",
-        pagePostAuthor: "admin",
-      };
-      dataLayer.push(dataLayer_content); //]]>
-    </script>
-    <script data-cfasync="false">
-      //<![CDATA[
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "//www.googletagmanager.com/gtm." + "js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-KTQ2BTD"); //]]>
-    </script>
-
-    <noscript
-      ><style>
-        .woocommerce-product-gallery {
-          opacity: 1 !important;
-        }
-      </style></noscript
-    >
-    <meta
-      name="generator"
-      content="Powered by Slider Revolution 6.2.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."
     />
     <link
       rel="icon"
@@ -371,7 +302,7 @@
               <ul id="menu-divided-menu-left" class="menu">
                 <li
                   id="menu-item-25"
-                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25 qodef-menu-item--narrow"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25 qodef-menu-item--narrow"
                 >
                   <a href="/"
                     ><span class="qodef-menu-item-text">Home</span
@@ -759,16 +690,7 @@
                                                 id="rev_slider_1_1"
                                                 style="display: none"
                                                 data-version="6.2.1"
-                                                ><div
-                                                  style="
-                                                    background-color: rgba(
-                                                      0,
-                                                      0,
-                                                      0,
-                                                      0.096
-                                                    );
-                                                  "
-                                                ></div>
+                                              >
                                                 <rs-slides>
                                                   <rs-slide
                                                     data-key="rs-1"
@@ -780,6 +702,17 @@
                                                       class="rev-slidebg"
                                                       data-no-retina
                                                     />
+                                                    <div
+                                                      style="
+                                                        background-color: #000000bf;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        position: relative;
+                                                        z-index: 1;
+                                                      "
+                                                    ></div>
                                                     <rs-layer
                                                       id="slider-1-slide-1-layer-1"
                                                       data-type="text"
@@ -1600,13 +1533,14 @@
                               </div>
                             </div>
                           </section>
+                          <% flatType.forEach(type => {%>
                           <section
                             class="elementor-element elementor-element-27ff1350 elementor-section-full_width qodef-elementor-content-grid elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
                             data-id="27ff1350"
                             data-element_type="section"
                           >
                             <div class="apart-type" style="text-align: center">
-                              <h1>3BHK</h1>
+                              <h1><%= type.typeName %></h1>
                             </div>
                             <div
                               class="elementor-container elementor-column-gap-no"
@@ -1648,7 +1582,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[0].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[0].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1661,7 +1595,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[1].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[1].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1674,7 +1608,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[2].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[2].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1687,7 +1621,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[3].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[3].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1700,7 +1634,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[4].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[4].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1719,7 +1653,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[0].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[0].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1731,7 +1665,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[1].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[1].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1743,7 +1677,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[2].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[2].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1755,7 +1689,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[3].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[3].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1767,7 +1701,7 @@
                                                         <img
                                                           width="800"
                                                           height="530"
-                                                          src="/assets/img/uploads/<%= threebhkimg[4].filename %>"
+                                                          src="/assets/img/uploads/<%= flatTypeimg[4].filename %>"
                                                           class="attachment-full size-full"
                                                           alt="a"
                                                           sizes="(max-width: 800px) 100vw, 800px"
@@ -1800,7 +1734,7 @@
                                                   >
                                                     <div>
                                                       <img
-                                                        src="/assets/img/uploads/<%= threebhkimgfp[0].filename %>"
+                                                        src="/assets/img/uploads/<%= flatTypeimgfp[0].filename %>"
                                                       />
                                                     </div>
                                                     <div
@@ -1811,449 +1745,7 @@
                                                     class="qodef-map-link-holder"
                                                   >
                                                     <a
-                                                      href="/assets/img/uploads/<%= threebhkimgfp[0].filename %>"
-                                                      >download floor plan</a
-                                                    >
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="apart-type" style="text-align: center">
-                              <h1>2BHK</h1>
-                            </div>
-                            <div
-                              class="elementor-container elementor-column-gap-no"
-                            >
-                              <div class="elementor-row">
-                                <div
-                                  class="elementor-element elementor-element-59b1d149 elementor-column elementor-col-100 elementor-top-column"
-                                  data-id="59b1d149"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-column-wrap elementor-element-populated"
-                                  >
-                                    <div class="elementor-widget-wrap">
-                                      <div
-                                        class="elementor-element elementor-element-edbfa9d elementor-widget elementor-widget-hendon_core_property_image_map_gallery"
-                                        data-id="edbfa9d"
-                                        data-element_type="widget"
-                                        data-widget_type="hendon_core_property_image_map_gallery.default"
-                                      >
-                                        <div class="elementor-widget-container">
-                                          <div
-                                            class="qodef-e qodef-image-map-gallery qodef-grid qodef-layout--template"
-                                            data-image-map-name="floorplan"
-                                          >
-                                            <div class="qodef-grid-inner clear">
-                                              <div
-                                                class="qodef-grid-item qodef-img-holder qodef-col--6"
-                                              >
-                                                <div
-                                                  class="qodef-img-section qodef-img-holder-inner active"
-                                                >
-                                                  <div class="qodef-img-slider">
-                                                    <div class="swiper-wrapper">
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 1"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[0].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 2"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[1].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 3"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[2].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 4"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[3].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 5"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[4].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div
-                                                    id="qodef-imp-pagination"
-                                                    class="qodef-pagination-slider clearfix"
-                                                  >
-                                                    <div class="swiper-wrapper">
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[0].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[1].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[2].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[3].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= twobhkimg[4].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div
-                                                class="qodef-grid-item qodef-map-holder qodef-col--6"
-                                              >
-                                                <div
-                                                  class="qodef-map-holder-inner"
-                                                >
-                                                  <!-- <ul
-                                                    class="qodef-map-navigation"
-                                                  >
-                                                    <li
-                                                      class="qodef-map-nav-item qodef-active-map active"
-                                                    >
-                                                      <span
-                                                        class="qodef-map-nav-item-text"
-                                                        >Photos</span
-                                                      >
-                                                    </li>
-                                                  </ul> -->
-                                                  <div
-                                                    class="qodef-image-map-holder"
-                                                  >
-                                                    <div>
-                                                      <img
-                                                        src="/assets/img/uploads/<%= twobhkimgfp[0].filename %>"
-                                                      />
-                                                    </div>
-                                                    <div
-                                                      class="qodef-image-map-holder-overlay"
-                                                    ></div>
-                                                  </div>
-                                                  <div
-                                                    class="qodef-map-link-holder"
-                                                  >
-                                                    <a
-                                                      href="/assets/img/uploads/<%= twobhkimgfp[0].filename %>"
-                                                      >download floor plan</a
-                                                    >
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="apart-type" style="text-align: center">
-                              <h1>1BHK</h1>
-                            </div>
-                            <div
-                              class="elementor-container elementor-column-gap-no"
-                            >
-                              <div class="elementor-row">
-                                <div
-                                  class="elementor-element elementor-element-59b1d149 elementor-column elementor-col-100 elementor-top-column"
-                                  data-id="59b1d149"
-                                  data-element_type="column"
-                                >
-                                  <div
-                                    class="elementor-column-wrap elementor-element-populated"
-                                  >
-                                    <div class="elementor-widget-wrap">
-                                      <div
-                                        class="elementor-element elementor-element-edbfa9d elementor-widget elementor-widget-hendon_core_property_image_map_gallery"
-                                        data-id="edbfa9d"
-                                        data-element_type="widget"
-                                        data-widget_type="hendon_core_property_image_map_gallery.default"
-                                      >
-                                        <div class="elementor-widget-container">
-                                          <div
-                                            class="qodef-e qodef-image-map-gallery qodef-grid qodef-layout--template"
-                                            data-image-map-name="floorplan"
-                                          >
-                                            <div class="qodef-grid-inner clear">
-                                              <div
-                                                class="qodef-grid-item qodef-img-holder qodef-col--6"
-                                              >
-                                                <div
-                                                  class="qodef-img-section qodef-img-holder-inner active"
-                                                >
-                                                  <div class="qodef-img-slider">
-                                                    <div class="swiper-wrapper">
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 1"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[0].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 2"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[1].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 3"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[2].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 4"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[3].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-ig-image swiper-slide"
-                                                        data-imp-shape="Poly 5"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[4].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div
-                                                    id="qodef-imp-pagination"
-                                                    class="qodef-pagination-slider clearfix"
-                                                  >
-                                                    <div class="swiper-wrapper">
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[0].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[1].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[2].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[3].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                      <div
-                                                        class="qodef-impp-item swiper-slide"
-                                                      >
-                                                        <img
-                                                          width="800"
-                                                          height="530"
-                                                          src="/assets/img/uploads/<%= onebhkimg[4].filename %>"
-                                                          class="attachment-full size-full"
-                                                          alt="a"
-                                                          sizes="(max-width: 800px) 100vw, 800px"
-                                                        />
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div
-                                                class="qodef-grid-item qodef-map-holder qodef-col--6"
-                                              >
-                                                <div
-                                                  class="qodef-map-holder-inner"
-                                                >
-                                                  <!-- <ul
-                                                    class="qodef-map-navigation"
-                                                  >
-                                                    <li
-                                                      class="qodef-map-nav-item qodef-active-map active"
-                                                    >
-                                                      <span
-                                                        class="qodef-map-nav-item-text"
-                                                        >Photos</span
-                                                      >
-                                                    </li>
-                                                  </ul> -->
-                                                  <div
-                                                    class="qodef-image-map-holder"
-                                                  >
-                                                    <div>
-                                                      <img
-                                                        src="/assets/img/uploads/<%= onebhkimgfp[0].filename %>"
-                                                      />
-                                                    </div>
-                                                    <div
-                                                      class="qodef-image-map-holder-overlay"
-                                                    ></div>
-                                                  </div>
-                                                  <div
-                                                    class="qodef-map-link-holder"
-                                                  >
-                                                    <a
-                                                      href="/assets/img/uploads/<%= onebhkimgfp[0].filename %>"
+                                                      href="/assets/img/uploads/<%= flatTypeimgfp[0].filename %>"
                                                       >download floor plan</a
                                                     >
                                                   </div>
@@ -2269,6 +1761,7 @@
                               </div>
                             </div>
                           </section>
+                          <%}); %>
                           <section
                             class="elementor-element elementor-element-486c3b67 elementor-section-full_width qodef-elementor-content-grid elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
                             data-id="486c3b67"
@@ -2589,11 +2082,12 @@
                         <span style="color: #d7926b">Address</span>:
                         <a
                           style="display: inline-block; padding-bottom: 10px"
-                          href="https://www.google.com/maps/place/Seestrasse+21,+8002+Zürich,+Switzerland/@47.363765,8.529405,17z/data=!3m1!4b1!4m5!3m4!1s0x479009f9149bc8ab:0x80b507c3ea8d2191!8m2!3d47.363765!4d8.5315937"
+                          href="https://www.google.com/maps/place/Millennium+Developers/@18.5960166,73.7786026,15.96z/data=!4m12!1m6!3m5!1s0x3bc2b9177b5b4d29:0xdda7aaece1d976e!2sMillennium+Developers!8m2!3d18.5960199!4d73.7826736!3m4!1s0x0:0xdb0b86957ead1318!8m2!3d18.5994994!4d73.780835"
                           target="_blank"
                           rel="noopener noreferrer"
-                          >GAT NO. 94 NEAR SNBP SCHOOL, DEHU-ALANDI RD,
-                          CHIKHALI-PUNE, PIMPRI-CHINCHWAD, MAHARASHTRA 412114</a
+                          >Millennium Developers, Metro 9 Building, First floor,
+                          Rahatani, Aundh-Ravet road, Opposite to park street,
+                          Pune</a
                         ><br />
                         <span style="color: #d7926b">Tel</span>:
                         <a href="tel:7276014404">72 76 01 44 04</a>
@@ -3030,431 +2524,12 @@
         </div>
       </div>
     </div>
-
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KTQ2BTD"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-
-    <script type="text/javascript">
-      var sbiajaxurl = "../../wp-admin/admin-ajax.html";
-    </script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400%7CCormorant+Garamond:400%7CRaleway:500"
-      rel="stylesheet"
-      property="stylesheet"
-      media="all"
-      type="text/css"
-    />
-    <script type="text/javascript">
-      var c = document.body.className;
-      c = c.replace(/woocommerce-no-js/, "woocommerce-js");
-      document.body.className = c;
-    </script>
-    <script type="text/javascript">
-      if (typeof revslider_showDoubleJqueryError === "undefined") {
-        function revslider_showDoubleJqueryError(sliderID) {
-          var err = "<div class='rs_error_message_box'>";
-          err += "<div class='rs_error_message_oops'>Oops...</div>";
-          err += "<div class='rs_error_message_content'>";
-          err +=
-            "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
-          err +=
-            "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
-          err +=
-            "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
-          err += "</div>";
-          err += "</div>";
-          jQuery(sliderID).show().html(err);
-        }
-      }
-    </script>
-    <script>
-      (function ($, window, document, undefined) {
-        $(document).ready(function () {
-          setTimeout(function () {
-            var settings = {
-              id: 2046,
-              editor: {
-                selected_shape: "poly-7155",
-                tool: "poly",
-                shapeCounter: { spots: 1, polys: 6 },
-              },
-              general: {
-                name: "floorplan",
-                shortcode: "floorplan",
-                width: 850,
-                height: 568,
-                naturalWidth: 850,
-                naturalHeight: 568,
-              },
-              image: {
-                url:
-                  "https:\/\/hendon.qodeinteractive.com\/wp-content\/uploads\/2020\/04\/apart-slider-img-1.png",
-              },
-              spots: [
-                {
-                  id: "poly-7155",
-                  title: "Poly 1",
-                  type: "poly",
-                  x: 7.58800000000000007815970093361102044582366943359375,
-                  y: 8.803000000000000824229573481716215610504150390625,
-                  width: 19.64699999999999846522769075818359851837158203125,
-                  height: 42.42999999999999971578290569595992565155029296875,
-                  default_style: { background_opacity: 0 },
-                  mouseover_style: {
-                    background_color: "#000000",
-                    background_opacity: 0.1000000000000000055511151231257827021181583404541015625,
-                  },
-                  tooltip_content: {
-                    squares_settings: {
-                      containers: [
-                        {
-                          id: "sq-container-403761",
-                          settings: {
-                            elements: [
-                              {
-                                settings: {
-                                  name: "Heading",
-                                  iconClass: "fa fa-header",
-                                },
-                                options: { heading: { text: "Poly 1" } },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  points: [
-                    {
-                      x: 0,
-                      y: 0.82987551867219921941654092734097503125667572021484375,
-                    },
-                    { x: 100, y: 0 },
-                    {
-                      x: 98.2035928143712482096816529519855976104736328125,
-                      y: 100,
-                    },
-                    {
-                      x: 1.197604790419161790993030081153847277164459228515625,
-                      y: 99.170124481327803778185625560581684112548828125,
-                    },
-                  ],
-                },
-                {
-                  id: "poly-3164",
-                  title: "Poly 2",
-                  type: "poly",
-                  x: 27.705999999999999516830939683131873607635498046875,
-                  y: 30.6340000000000003410605131648480892181396484375,
-                  width: 13.294000000000000483169060316868126392364501953125,
-                  height: 27.992999999999998550492819049395620822906494140625,
-                  default_style: { background_opacity: 0 },
-                  mouseover_style: {
-                    background_color: "#000000",
-                    background_opacity: 0.1000000000000000055511151231257827021181583404541015625,
-                  },
-                  tooltip_content: {
-                    squares_settings: {
-                      containers: [
-                        {
-                          id: "sq-container-403761",
-                          settings: {
-                            elements: [
-                              {
-                                settings: {
-                                  name: "Heading",
-                                  iconClass: "fa fa-header",
-                                },
-                                options: { heading: { text: "Poly 2" } },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  points: [
-                    {
-                      x: 0.884955752212389423760896534076891839504241943359375,
-                      y: 0,
-                    },
-                    { x: 100, y: 0 },
-                    {
-                      x: 98.23008849557521671158610843122005462646484375,
-                      y: 100,
-                    },
-                    { x: 0, y: 100 },
-                  ],
-                },
-                {
-                  id: "poly-6408",
-                  title: "Poly 3",
-                  type: "poly",
-                  x: 63.35300000000000153477230924181640148162841796875,
-                  y: 62.3239999999999980673237587325274944305419921875,
-                  width: 34.8239999999999980673237587325274944305419921875,
-                  height: 26.937000000000001165290086646564304828643798828125,
-                  default_style: { background_opacity: 0 },
-                  mouseover_style: {
-                    background_color: "#000000",
-                    background_opacity: 0.059999999999999997779553950749686919152736663818359375,
-                  },
-                  tooltip_content: {
-                    squares_settings: {
-                      containers: [
-                        {
-                          id: "sq-container-403761",
-                          settings: {
-                            elements: [
-                              {
-                                settings: {
-                                  name: "Heading",
-                                  iconClass: "fa fa-header",
-                                },
-                                options: { heading: { text: "Poly 3" } },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  points: [
-                    {
-                      x: 0,
-                      y: 2.614379084967320299170978614711202681064605712890625,
-                    },
-                    {
-                      x: 99.662162162162161394007853232324123382568359375,
-                      y: 0,
-                    },
-                    {
-                      x: 100,
-                      y: 60.784313725490193291989271529018878936767578125,
-                    },
-                    {
-                      x: 65.8783783783783718490667524747550487518310546875,
-                      y: 62.74509803921568362738980795256793498992919921875,
-                    },
-                    {
-                      x: 64.864864864864870241945027373731136322021484375,
-                      y: 100,
-                    },
-                    { x: 0, y: 100 },
-                  ],
-                },
-                {
-                  id: "poly-6846",
-                  title: "Poly 4",
-                  type: "poly",
-                  x: 63.58800000000000096633812063373625278472900390625,
-                  y: 28.169000000000000483169060316868126392364501953125,
-                  width: 34.47099999999999653255144949071109294891357421875,
-                  height: 34.3310000000000030695446184836328029632568359375,
-                  default_style: { background_opacity: 0 },
-                  mouseover_style: {
-                    background_color: "#000000",
-                    background_opacity: 0.14000000000000001332267629550187848508358001708984375,
-                  },
-                  tooltip_content: {
-                    squares_settings: {
-                      containers: [
-                        {
-                          id: "sq-container-403761",
-                          settings: {
-                            elements: [
-                              {
-                                settings: {
-                                  name: "Heading",
-                                  iconClass: "fa fa-header",
-                                },
-                                options: { heading: { text: "Poly 4" } },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  points: [
-                    {
-                      x: 0.68259385665529015430053050295100547373294830322265625,
-                      y: 0,
-                    },
-                    { x: 100, y: 0 },
-                    {
-                      x: 99.3174061433447121771678212098777294158935546875,
-                      y: 96.9230769230769197974950657226145267486572265625,
-                    },
-                    { x: 0, y: 100 },
-                  ],
-                },
-                {
-                  id: "poly-4998",
-                  title: "Poly 5",
-                  type: "poly",
-                  x: 27.58800000000000096633812063373625278472900390625,
-                  y: 9.68299999999999982946974341757595539093017578125,
-                  width: 12.3529999999999997584154698415659368038177490234375,
-                  height: 13.20400000000000062527760746888816356658935546875,
-                  default_style: { background_opacity: 0 },
-                  mouseover_style: {
-                    background_color: "#000000",
-                    background_opacity: 0.14000000000000001332267629550187848508358001708984375,
-                  },
-                  tooltip_content: {
-                    squares_settings: {
-                      containers: [
-                        {
-                          id: "sq-container-403761",
-                          settings: {
-                            elements: [
-                              {
-                                settings: {
-                                  name: "Heading",
-                                  iconClass: "fa fa-header",
-                                },
-                                options: { heading: { text: "Poly 5" } },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  points: [
-                    { x: 0, y: 0 },
-                    {
-                      x: 2.857142857142857206298458550008945167064666748046875,
-                      y: 100,
-                    },
-                    { x: 100, y: 96 },
-                    {
-                      x: 100,
-                      y: 1.333333333333333481363069950020872056484222412109375,
-                    },
-                  ],
-                },
-              ],
-            };
-            $("#image-map-pro-2046").imageMapPro(settings);
-          }, 0);
-        });
-      })(jQuery, window, document);
-    </script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var wpcf7 = {
-        apiSettings: {
-          root:
-            "https:\/\/hendon.qodeinteractive.com\/wp-json\/contact-form-7\/v1",
-          namespace: "contact-form-7\/v1",
-        },
-        cached: "1",
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/6d18f.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var wc_add_to_cart_params = {
-        ajax_url: "\/wp-admin\/admin-ajax.php",
-        wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
-        i18n_view_cart: "View cart",
-        cart_url: "https:\/\/hendon.qodeinteractive.com",
-        is_cart: "",
-        cart_redirect_after_add: "no",
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/dc06c.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var woocommerce_params = {
-        ajax_url: "\/wp-admin\/admin-ajax.php",
-        wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/63a69.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var wc_cart_fragments_params = {
-        ajax_url: "\/wp-admin\/admin-ajax.php",
-        wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
-        cart_hash_key: "wc_cart_hash_fef14d197c5fa9b78f47b75e042cc15e",
-        fragment_name: "wc_fragments_fef14d197c5fa9b78f47b75e042cc15e",
-        request_timeout: "5000",
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/971bb.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var qodefGlobal = {
-        vars: {
-          adminBarHeight: 0,
-          topAreaHeight: 0,
-          restUrl: "https:\/\/hendon.qodeinteractive.com\/wp-json\/",
-          restNonce: "88c863218f",
-          paginationRestRoute: "hendon\/v1\/get-posts",
-          headerHeight: 130,
-          mobileHeaderHeight: 70,
-        },
-      };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/7742e.js"></script>
-    <script type="text/javascript">
-      var elementorFrontendConfig = {
-        environmentMode: { edit: false, wpPreview: false },
-        i18n: {
-          shareOnFacebook: "Share on Facebook",
-          shareOnTwitter: "Share on Twitter",
-          pinIt: "Pin it",
-          downloadImage: "Download image",
-        },
-        is_rtl: false,
-        breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
-        version: "2.9.7",
-        urls: {
-          assets:
-            "https:\/\/hendon.qodeinteractive.com\/wp-content\/plugins\/elementor\/assets\/",
-        },
-        settings: {
-          page: [],
-          general: {
-            elementor_lightbox_enable_counter: "yes",
-            elementor_lightbox_enable_fullscreen: "yes",
-            elementor_lightbox_enable_zoom: "yes",
-            elementor_lightbox_enable_share: "yes",
-            elementor_lightbox_title_src: "title",
-            elementor_lightbox_description_src: "description",
-          },
-          editorPreferences: [],
-        },
-        post: {
-          id: 2007,
-          title: "West%20Complex%20%E2%80%93%20Hendon",
-          excerpt:
-            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.",
-          featuredImage:
-            "https:\/\/hendon.qodeinteractive.com\/wp-content\/uploads\/2020\/05\/h1-apart-feature-1.jpg",
-        },
-      };
-    </script>
     <script src="/wp-content/cache/minify/9f110.js"></script>
-    <script type="text/javascript">
-      /* <![CDATA[ */
-      var qodefElementorGlobal = { vars: { elementorSectionHandler: [] } };
-      /* ]]> */
-    </script>
     <script src="/wp-content/cache/minify/d0923.js"></script>
   </body>
 

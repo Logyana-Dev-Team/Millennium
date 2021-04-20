@@ -17506,7 +17506,6 @@ input[type="text"]::-ms-clear {
     > .qodef-grid-inner
     > .qodef-grid-item {
     width: 100% !important;
-    margin-left: 5% !important;
   }
   .qodef-grid-inner {
     padding: 5% !important;
