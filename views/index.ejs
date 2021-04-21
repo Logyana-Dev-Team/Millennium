@@ -2611,57 +2611,59 @@
                                                       required
                                                   /></span>
                                                 </div>
-                                              </div>
-                                              <div
-                                                class="qodef-grid-item qodef-col--6"
-                                              >
-                                                <span
-                                                  class="wpcf7-form-control-wrap your-time"
-                                                  ><select
-                                                    name="project"
-                                                    class="wpcf7-form-control wpcf7-select"
-                                                    aria-invalid="false"
-                                                    required
-                                                  >
-                                                    <option>
-                                                      Select Project
-                                                    </option>
-                                                    <%apartment.forEach(apartments=>{%>
-                                                    <option
-                                                      value="<%= apartments.projName %>"
+
+                                                <div
+                                                  class="qodef-grid-item qodef-col--6"
+                                                >
+                                                  <span
+                                                    class="wpcf7-form-control-wrap your-time"
+                                                    ><select
+                                                      name="project"
+                                                      class="wpcf7-form-control wpcf7-select"
+                                                      aria-invalid="false"
+                                                      required
                                                     >
-                                                      <%= apartments.projName %>
-                                                    </option>
-                                                    <% }); %>
-                                                  </select></span
-                                                >
-                                              </div>
-                                              <div
-                                                class="qodef-grid-item qodef-col--12"
-                                              >
-                                                <span
-                                                  class="wpcf7-form-control-wrap your-message"
-                                                >
-                                                  <textarea
-                                                    name="yourMessage"
-                                                    cols="40"
-                                                    rows="10"
-                                                    class="wpcf7-form-control wpcf7-textarea"
-                                                    placeholder="Message"
-                                                  ></textarea>
-                                                </span>
-                                              </div>
-                                              <div
-                                                class="qodef-grid-item qodef-col--12"
-                                              >
-                                                <button
-                                                  type="submit"
-                                                  class="wpcf7-form-control wpcf7-submit qodef-button qodef-size--normal qodef-type--filled qodef-m"
-                                                >
-                                                  <span class="qodef-m-text"
-                                                    >Contact</span
+                                                      <option>
+                                                        Select Project
+                                                      </option>
+                                                      <%apartment.forEach(apartments=>{%>
+                                                      <option
+                                                        value="<%= apartments.projName %>"
+                                                      >
+                                                        <%= apartments.projName
+                                                        %>
+                                                      </option>
+                                                      <% }); %>
+                                                    </select></span
                                                   >
-                                                </button>
+                                                </div>
+                                                <div
+                                                  class="qodef-grid-item qodef-col--12"
+                                                >
+                                                  <span
+                                                    class="wpcf7-form-control-wrap your-message"
+                                                  >
+                                                    <textarea
+                                                      name="yourMessage"
+                                                      cols="40"
+                                                      rows="10"
+                                                      class="wpcf7-form-control wpcf7-textarea"
+                                                      placeholder="Message"
+                                                    ></textarea>
+                                                  </span>
+                                                </div>
+                                                <div
+                                                  class="qodef-grid-item qodef-col--12"
+                                                >
+                                                  <button
+                                                    type="submit"
+                                                    class="wpcf7-form-control wpcf7-submit qodef-button qodef-size--normal qodef-type--filled qodef-m"
+                                                  >
+                                                    <span class="qodef-m-text"
+                                                      >Contact</span
+                                                    >
+                                                  </button>
+                                                </div>
                                               </div>
                                             </div>
                                           </form>
