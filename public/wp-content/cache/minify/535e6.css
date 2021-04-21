@@ -7615,6 +7615,8 @@ button.swiper-pagination-bullet {
   }
   .elementor-1172 .elementor-element.elementor-element-e8cc071 {
     padding: 0px 0px 0px 0px;
+    margin-bottom: 50px;
+    text-align: center;
   }
   .elementor-1172
     .elementor-element.elementor-element-2828b02
@@ -7699,5 +7701,10 @@ button.swiper-pagination-bullet {
   }
   .elementor-1172 .elementor-element.elementor-element-a6c6b71 {
     padding: 125px 0px 160px 0px;
+  }
+}
+@media (max-width: 680px) {
+  .qodef-m-text {
+    letter-spacing: 0;
   }
 }
